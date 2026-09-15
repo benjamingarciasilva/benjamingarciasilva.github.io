@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portrait preview | Benjamín García</title>
+<title>Layout preview | Benjamín García</title>
 <meta name="robots" content="noindex">
 <meta name="description" content="Benjamín García is an economist at the Central Bank of Chile, where he heads the Medium-Term Forecasting Department. Research in macroeconomics and monetary economics: DSGE and HANK models, behavioral macroeconomics, and forecasting.">
 <meta name="author" content="Benjamín García">
@@ -13,7 +13,7 @@
 <meta property="og:title" content="Benjamín García">
 <meta property="og:description" content="Economist at the Central Bank of Chile. Research in macroeconomics and monetary economics: DSGE and HANK models, behavioral macroeconomics, and forecasting.">
 <meta property="og:url" content="https://benjamingarcia.cl/">
-<meta property="og:image" content="https://benjamingarcia.cl/assets/banner.jpg">
+<meta property="og:image" content="https://benjamingarcia.cl/assets/banner-c.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
@@ -48,13 +48,15 @@
     --rule: #e3e0d9;
     --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
     --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --header-tall: 300px;
+    --header-tall: 420px;
+    --banner-y: 35%;
+    --avatar-size: 184px;
+    --avatar-size-mobile: 112px;
     --header-short: 64px;
-    --avatar-size: 136px;
     color-scheme: light dark;
   }
   @media (max-width: 640px) {
-    :root { --header-tall: 210px; --header-short: 56px; --avatar-size: 84px; }
+    :root { --header-short: 56px; }
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -105,19 +107,50 @@
     position: absolute; inset: 0;
     width: 100%; height: 100%;
     object-fit: cover;
-    object-position: 50% 38%;
+    object-position: 50% var(--banner-y);
   }
   .banner-scrim {
     position: absolute; inset: 0;
-    background: linear-gradient(to bottom,
-      rgba(12, 17, 23, .44) 0%,
-      rgba(12, 17, 23, .10) 26%,
-      rgba(12, 17, 23, .16) 48%,
-      rgba(12, 17, 23, .58) 76%,
-      rgba(12, 17, 23, .84) 100%);
+    background:
+      linear-gradient(to bottom, rgba(12, 17, 23, .46) 0%, rgba(12, 17, 23, 0) 20%),
+      radial-gradient(120% 95% at 8% 100%,
+        rgba(12, 17, 23, .84) 0%,
+        rgba(12, 17, 23, .55) 34%,
+        rgba(12, 17, 23, .12) 62%,
+        rgba(12, 17, 23, 0) 78%);
     transition: background .28s ease;
   }
   .site-header.compact .banner-scrim { background: rgba(12, 17, 23, .70); }
+
+  /* ---- shading variants (preview) ---- */
+  .scrim-cornerwide .banner-scrim {
+    background:
+      linear-gradient(to bottom, rgba(12, 17, 23, .46) 0%, rgba(12, 17, 23, 0) 22%),
+      radial-gradient(155% 125% at 12% 100%,
+        rgba(12, 17, 23, .88) 0%, rgba(12, 17, 23, .62) 38%,
+        rgba(12, 17, 23, .20) 68%, rgba(12, 17, 23, 0) 86%);
+  }
+  .scrim-light .banner-scrim {
+    background: linear-gradient(to bottom,
+      rgba(12, 17, 23, .34) 0%, rgba(12, 17, 23, .06) 26%,
+      rgba(12, 17, 23, .06) 60%, rgba(12, 17, 23, .30) 82%,
+      rgba(12, 17, 23, .52) 100%);
+  }
+  .scrim-left .banner-scrim {
+    background:
+      linear-gradient(to bottom, rgba(12, 17, 23, .50) 0%, rgba(12, 17, 23, 0) 22%),
+      linear-gradient(to right, rgba(12, 17, 23, .80) 0%, rgba(12, 17, 23, .62) 26%,
+        rgba(12, 17, 23, .22) 48%, rgba(12, 17, 23, 0) 66%);
+  }
+  .scrim-vertical .banner-scrim {
+    background: linear-gradient(to bottom,
+      rgba(12, 17, 23, .44) 0%, rgba(12, 17, 23, .10) 26%,
+      rgba(12, 17, 23, .16) 48%, rgba(12, 17, 23, .58) 76%,
+      rgba(12, 17, 23, .84) 100%);
+  }
+  .scrim-none .banner-scrim {
+    background: linear-gradient(to bottom, rgba(12, 17, 23, .38) 0%, rgba(12, 17, 23, 0) 18%);
+  }
 
   .header-inner {
     position: relative;
@@ -152,7 +185,7 @@
     line-height: 1.12;
     letter-spacing: -0.01em;
     color: #fff;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, .7), 0 2px 18px rgba(0, 0, 0, .5);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .95), 0 2px 10px rgba(0, 0, 0, .85), 0 0 26px rgba(0, 0, 0, .6);
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     transition: font-size .28s ease;
   }
@@ -165,7 +198,7 @@
     color: rgba(255, 255, 255, .95);
     font-size: .95rem;
     line-height: 1.35;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, .85), 0 1px 16px rgba(0, 0, 0, .6);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .95), 0 2px 10px rgba(0, 0, 0, .85), 0 0 26px rgba(0, 0, 0, .6);
     transition: max-height .28s ease, opacity .18s ease, margin-top .28s ease;
   }
   .site-header.compact .titleline { max-height: 0; opacity: 0; margin-top: 0; }
@@ -180,7 +213,7 @@
     color: #fff;
     font-size: .95rem;
     text-decoration: none;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, .9), 0 1px 14px rgba(0, 0, 0, .65);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .95), 0 2px 10px rgba(0, 0, 0, .85), 0 0 26px rgba(0, 0, 0, .6);
     transition: font-size .28s ease;
   }
   .site-nav a:hover { text-decoration: underline; }
@@ -188,9 +221,9 @@
 
   @media (max-width: 640px) {
     .header-inner { padding-bottom: 1rem; gap: .75rem; }
-
-    .site-header h1 { font-size: 1.5rem; }
-    .titleline { font-size: .85rem; }
+    .avatar { width: var(--avatar-size-mobile); height: var(--avatar-size-mobile); }
+    .site-header h1 { font-size: clamp(1.15rem, 5.4vw, 1.5rem); }
+    .titleline { font-size: .85rem; max-height: 6rem; }
     .site-nav { top: .7rem; gap: .85rem; }
     .site-nav a { font-size: .85rem; }
     .site-header.compact .site-nav { top: 1.2rem; }
@@ -220,17 +253,12 @@
   section p { margin: 0 0 1rem; }
   #about p { text-align: justify; hyphens: auto; }
   .about-portrait {
-    display: none;
-    float: right;
-    width: 200px;
-    margin: .3rem 0 1rem 1.6rem;
-    border-radius: 10px;
-    border: 1px solid var(--rule);
+    display: none; float: right; width: 200px;
+    margin: .3rem 0 1rem 1.6rem; border-radius: 10px; border: 1px solid var(--rule);
   }
   body.show-about-portrait .about-portrait { display: block; }
   @media (max-width: 560px) {
-    .about-portrait { float: none; display: none; width: 60%; margin: 0 auto 1.2rem; }
-    body.show-about-portrait .about-portrait { display: block; }
+    .about-portrait { float: none; width: 60%; margin: 0 auto 1.2rem; }
   }
   @media (max-width: 480px) {
     #about p { text-align: left; }
@@ -324,15 +352,13 @@
 <body>
 
 <header class="site-header" id="siteHeader">
-  <img class="banner-img" src="assets/banner.jpg"
-       srcset="assets/banner-small.jpg 1100w, assets/banner.jpg 1800w"
-       sizes="100vw" alt="" aria-hidden="true">
+  <img class="banner-img" id="bannerImg" src="assets/banner-c.jpg" alt="" aria-hidden="true">
   <div class="banner-scrim" aria-hidden="true"></div>
   <div class="header-inner">
     <img class="avatar" src="assets/avatar.jpg" width="360" height="360" alt="Benjamín García">
     <div class="id">
       <h1>Benjamín García</h1>
-      <p class="titleline">Economist · Head of the Medium-Term Forecasting Department, Central Bank of Chile</p>
+      <p class="titleline"><span class="tl-full">Economist · Head of the Medium-Term Forecasting Department, Central Bank of Chile</span><span class="tl-short" hidden>Economist · Central Bank of Chile</span></p>
     </div>
     <nav class="site-nav">
       <a href="#about">About</a>
@@ -684,6 +710,26 @@ I am an economist at the Central Bank of Chile, where I head the Medium-Term For
     window.addEventListener('resize', onScroll, { passive: true });
     update();
   })();
+
+  // Shorten the subtitle when the full version would need four or more lines.
+  (function () {
+    var line = document.querySelector('.titleline');
+    var full = document.querySelector('.tl-full');
+    var short = document.querySelector('.tl-short');
+    if (!line || !full || !short) return;
+    function fit() {
+      full.hidden = false; short.hidden = true;
+      var lh = parseFloat(getComputedStyle(line).lineHeight) || 18;
+      if (line.scrollHeight / lh > 3.4) { full.hidden = true; short.hidden = false; }
+    }
+    fit();
+    var pending = false;
+    window.addEventListener('resize', function () {
+      if (pending) return;
+      pending = true;
+      window.requestAnimationFrame(function () { pending = false; fit(); });
+    }, { passive: true });
+  })();
 </script>
 
 
@@ -692,45 +738,85 @@ I am an economist at the Central Bank of Chile, where I head the Medium-Term For
     position: fixed; right: 12px; bottom: 12px; z-index: 200;
     background: var(--bg); color: var(--ink);
     border: 1px solid var(--rule); border-radius: 10px;
-    padding: .6rem .7rem; font-size: .78rem; line-height: 1.5;
-    box-shadow: 0 4px 18px rgba(0,0,0,.18); max-width: 15rem;
+    padding: .55rem .65rem; font-size: .75rem; line-height: 1.4;
+    box-shadow: 0 4px 18px rgba(0,0,0,.2);
+    width: 15.5rem; max-height: 82vh; overflow-y: auto;
   }
   #preview-controls .pc-note { color: var(--faint); display: block; margin-bottom: .4rem; }
+  #preview-controls .pc-row { margin-bottom: .4rem; }
+  #preview-controls .pc-lab { color: var(--muted); display: block; }
   #preview-controls button {
-    font: inherit; cursor: pointer; margin: 0 .25rem .25rem 0;
-    padding: .18rem .45rem; border-radius: 5px;
+    font: inherit; cursor: pointer; margin: .1rem .18rem 0 0;
+    padding: .14rem .38rem; border-radius: 5px;
     border: 1px solid var(--rule); background: transparent; color: var(--ink);
   }
   #preview-controls button[aria-pressed="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
-  #preview-controls label { display: block; margin-top: .35rem; cursor: pointer; }
+  #preview-controls label { display: block; margin: .3rem 0; cursor: pointer; }
+  #pc-reset { border-style: dashed; }
+  #pc-readout { color: var(--faint); border-top: 1px solid var(--rule); padding-top: .4rem; margin-top: .3rem; }
 </style>
 <div id="preview-controls">
   <span class="pc-note">Preview controls, not part of the site</span>
-  Header photo:
-  <div id="pc-sizes"></div>
+  <div class="pc-row"><span class="pc-lab">Portrait, desktop</span><span id="pc-d"></span></div>
+  <div class="pc-row"><span class="pc-lab">Portrait, phone (&le;640px)</span><span id="pc-m"></span></div>
+  <div class="pc-row"><span class="pc-lab">Banner crop</span><span id="pc-crop"></span></div>
+  <div class="pc-row"><span class="pc-lab">Vertical framing</span><span id="pc-y"></span></div>
+  <div class="pc-row"><span class="pc-lab">Shading</span><span id="pc-scrim"></span></div>
+  <div class="pc-row"><span class="pc-lab">Banner height</span><span id="pc-h"></span></div>
   <label><input type="checkbox" id="pc-about"> portrait in About</label>
+  <button id="pc-reset" type="button">reset to live settings</button>
+  <div id="pc-readout"></div>
 </div>
 <script>
   (function () {
-    var sizes = [88, 112, 136, 160, 184];
-    var wrap = document.getElementById('pc-sizes');
-    var current = 136;
-    function paint() {
-      document.documentElement.style.setProperty('--avatar-size', current + 'px');
-      [].forEach.call(wrap.children, function (b) {
-        b.setAttribute('aria-pressed', String(Number(b.textContent) === current));
+    var root = document.documentElement, hdr = document.getElementById('siteHeader'),
+        img = document.getElementById('bannerImg');
+    var LIVE = { d: 184, m: 112, crop: 'banner-c.jpg', y: 35, scrim: 'corner', h: 420 };
+    var state = Object.assign({}, LIVE);
+    var scrims = ['corner', 'cornerwide', 'light', 'left', 'vertical', 'none'];
+    function group(hostId, items, key) {
+      var host = document.getElementById(hostId);
+      items.forEach(function (it) {
+        var label = Array.isArray(it) ? it[0] : it, val = Array.isArray(it) ? it[1] : it;
+        var b = document.createElement('button');
+        b.type = 'button'; b.textContent = label; b._val = val;
+        b.onclick = function () { state[key] = val; paint(); };
+        host.appendChild(b);
       });
+      host._key = key;
     }
-    sizes.forEach(function (n) {
-      var b = document.createElement('button');
-      b.textContent = n;
-      b.onclick = function () { current = n; paint(); };
-      wrap.appendChild(b);
-    });
-    paint();
+    function paint() {
+      root.style.setProperty('--avatar-size', state.d + 'px');
+      root.style.setProperty('--avatar-size-mobile', state.m + 'px');
+      root.style.setProperty('--banner-y', state.y + '%');
+      root.style.setProperty('--header-tall', state.h + 'px');
+      if (img.getAttribute('src') !== 'assets/' + state.crop) img.src = 'assets/' + state.crop;
+      scrims.forEach(function (n) { hdr.classList.remove('scrim-' + n); });
+      if (state.scrim !== 'corner') hdr.classList.add('scrim-' + state.scrim);
+      ['pc-d', 'pc-m', 'pc-crop', 'pc-y', 'pc-scrim', 'pc-h'].forEach(function (id) {
+        var host = document.getElementById(id);
+        [].forEach.call(host.children, function (b) {
+          b.setAttribute('aria-pressed', String(b._val === state[host._key]));
+        });
+      });
+      document.getElementById('pc-readout').textContent =
+        'portrait ' + state.d + '/' + state.m + 'px · ' + state.crop +
+        ' · y ' + state.y + '% · ' + state.scrim + ' · ' + state.h + 'px';
+    }
+    group('pc-d', [112, 136, 160, 184, 208, 232], 'd');
+    group('pc-m', [72, 88, 100, 112, 128, 144], 'm');
+    group('pc-crop', [['old', 'banner.jpg'], ['balanced', 'banner-b.jpg'],
+                      ['mountains', 'banner-c.jpg'], ['full', 'banner-d.jpg']], 'crop');
+    group('pc-y', [25, 35, 45, 55, 65, 75], 'y');
+    group('pc-scrim', scrims, 'scrim');
+    group('pc-h', [220, 260, 300, 360, 420, 480], 'h');
     document.getElementById('pc-about').onchange = function (e) {
       document.body.classList.toggle('show-about-portrait', e.target.checked);
     };
+    document.getElementById('pc-reset').onclick = function () {
+      state = Object.assign({}, LIVE); paint();
+    };
+    paint();
   })();
 </script>
 </body>
