@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Benjamín García | Economist, Central Bank of Chile</title>
+<title>Banner preview | Benjamín García</title>
+<meta name="robots" content="noindex">
 <meta name="description" content="Benjamín García is an economist at the Central Bank of Chile, where he heads the Medium-Term Forecasting Department. Research in macroeconomics and monetary economics: DSGE and HANK models, behavioral macroeconomics, and forecasting.">
 <meta name="author" content="Benjamín García">
 <link rel="canonical" href="https://benjamingarcia.cl/">
@@ -48,6 +49,7 @@
     --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
     --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --header-tall: 300px;
+    --banner-y: 38%;
     --header-short: 64px;
     color-scheme: light dark;
   }
@@ -103,7 +105,7 @@
     position: absolute; inset: 0;
     width: 100%; height: 100%;
     object-fit: cover;
-    object-position: 50% 38%;
+    object-position: 50% var(--banner-y);
   }
   .banner-scrim {
     position: absolute; inset: 0;
@@ -116,6 +118,45 @@
     transition: background .28s ease;
   }
   .site-header.compact .banner-scrim { background: rgba(12, 17, 23, .70); }
+
+  /* ---- scrim variants (preview) ---- */
+  .scrim-light .banner-scrim {
+    background: linear-gradient(to bottom,
+      rgba(12, 17, 23, .34) 0%,
+      rgba(12, 17, 23, .06) 26%,
+      rgba(12, 17, 23, .06) 60%,
+      rgba(12, 17, 23, .30) 82%,
+      rgba(12, 17, 23, .52) 100%);
+  }
+  .scrim-left .banner-scrim {
+    background:
+      linear-gradient(to bottom, rgba(12, 17, 23, .50) 0%, rgba(12, 17, 23, 0) 22%),
+      linear-gradient(to right,
+        rgba(12, 17, 23, .80) 0%,
+        rgba(12, 17, 23, .62) 26%,
+        rgba(12, 17, 23, .22) 48%,
+        rgba(12, 17, 23, 0) 66%);
+  }
+  .scrim-corner .banner-scrim {
+    background:
+      linear-gradient(to bottom, rgba(12, 17, 23, .46) 0%, rgba(12, 17, 23, 0) 20%),
+      radial-gradient(120% 95% at 8% 100%,
+        rgba(12, 17, 23, .84) 0%,
+        rgba(12, 17, 23, .55) 34%,
+        rgba(12, 17, 23, .12) 62%,
+        rgba(12, 17, 23, 0) 78%);
+  }
+  .scrim-none .banner-scrim {
+    background: linear-gradient(to bottom, rgba(12, 17, 23, .38) 0%, rgba(12, 17, 23, 0) 18%);
+  }
+  .scrim-light .site-header h1, .scrim-left .site-header h1,
+  .scrim-corner .site-header h1, .scrim-none .site-header h1,
+  .scrim-light .titleline, .scrim-left .titleline,
+  .scrim-corner .titleline, .scrim-none .titleline,
+  .scrim-light .site-nav a, .scrim-left .site-nav a,
+  .scrim-corner .site-nav a, .scrim-none .site-nav a {
+    text-shadow: 0 1px 2px rgba(0,0,0,.95), 0 2px 10px rgba(0,0,0,.85), 0 0 26px rgba(0,0,0,.6);
+  }
 
   .header-inner {
     position: relative;
@@ -309,9 +350,7 @@
 <body>
 
 <header class="site-header" id="siteHeader">
-  <img class="banner-img" src="assets/banner.jpg"
-       srcset="assets/banner-small.jpg 1100w, assets/banner.jpg 1800w"
-       sizes="100vw" alt="" aria-hidden="true">
+  <img class="banner-img" id="bannerImg" src="assets/banner.jpg" alt="" aria-hidden="true">
   <div class="banner-scrim" aria-hidden="true"></div>
   <div class="header-inner">
     <img class="avatar" src="assets/avatar.jpg" width="360" height="360" alt="Benjamín García">
@@ -690,6 +729,79 @@ I am an economist at the Central Bank of Chile, where I head the Medium-Term For
   })();
 </script>
 
-<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "21345c992f474a888e623f001f0b4cf0"}'></script><!-- End Cloudflare Web Analytics -->
+
+<style>
+  #preview-controls {
+    position: fixed; right: 12px; bottom: 12px; z-index: 200;
+    background: var(--bg); color: var(--ink);
+    border: 1px solid var(--rule); border-radius: 10px;
+    padding: .6rem .7rem; font-size: .76rem; line-height: 1.45;
+    box-shadow: 0 4px 18px rgba(0,0,0,.2); width: 15.5rem;
+  }
+  #preview-controls .pc-note { color: var(--faint); display: block; margin-bottom: .45rem; }
+  #preview-controls .pc-row { margin-bottom: .45rem; }
+  #preview-controls .pc-lab { color: var(--muted); display: block; }
+  #preview-controls button {
+    font: inherit; cursor: pointer; margin: .12rem .2rem 0 0;
+    padding: .16rem .4rem; border-radius: 5px;
+    border: 1px solid var(--rule); background: transparent; color: var(--ink);
+  }
+  #preview-controls button[aria-pressed="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+  #pc-readout { color: var(--faint); border-top: 1px solid var(--rule); padding-top: .4rem; word-break: break-all; }
+</style>
+<div id="preview-controls">
+  <span class="pc-note">Preview controls, not part of the site</span>
+  <div class="pc-row"><span class="pc-lab">Crop</span><span id="pc-crop"></span></div>
+  <div class="pc-row"><span class="pc-lab">Vertical framing</span><span id="pc-y"></span></div>
+  <div class="pc-row"><span class="pc-lab">Shading</span><span id="pc-scrim"></span></div>
+  <div class="pc-row"><span class="pc-lab">Height</span><span id="pc-h"></span></div>
+  <div id="pc-readout"></div>
+</div>
+<script>
+  (function () {
+    var root = document.documentElement, hdr = document.getElementById('siteHeader'),
+        img = document.getElementById('bannerImg');
+    var state = { crop: 'banner.jpg', y: 38, scrim: 'current', h: 300 };
+    var crops = [['current', 'banner.jpg'], ['balanced', 'banner-b.jpg'],
+                 ['mountains', 'banner-c.jpg'], ['full', 'banner-d.jpg']];
+    var scrims = ['current', 'light', 'left', 'corner', 'none'];
+
+    function group(host, items, get, set) {
+      items.forEach(function (it) {
+        var label = Array.isArray(it) ? it[0] : it, val = Array.isArray(it) ? it[1] : it;
+        var b = document.createElement('button');
+        b.textContent = label;
+        b.onclick = function () { set(val); paint(); };
+        b._val = val;
+        host.appendChild(b);
+      });
+      host._get = get;
+    }
+    function paint() {
+      img.src = 'assets/' + state.crop;
+      root.style.setProperty('--banner-y', state.y + '%');
+      root.style.setProperty('--header-tall', state.h + 'px');
+      scrims.forEach(function (n) { hdr.classList.remove('scrim-' + n); });
+      if (state.scrim !== 'current') hdr.classList.add('scrim-' + state.scrim);
+      ['pc-crop', 'pc-y', 'pc-scrim', 'pc-h'].forEach(function (id) {
+        var host = document.getElementById(id);
+        [].forEach.call(host.children, function (b) {
+          b.setAttribute('aria-pressed', String(b._val === host._get()));
+        });
+      });
+      document.getElementById('pc-readout').textContent =
+        state.crop + ' · y ' + state.y + '% · ' + state.scrim + ' · ' + state.h + 'px';
+    }
+    group(document.getElementById('pc-crop'), crops, function () { return state.crop; },
+          function (v) { state.crop = v; });
+    group(document.getElementById('pc-y'), [25, 35, 45, 55, 65, 75], function () { return state.y; },
+          function (v) { state.y = v; });
+    group(document.getElementById('pc-scrim'), scrims, function () { return state.scrim; },
+          function (v) { state.scrim = v; });
+    group(document.getElementById('pc-h'), [260, 300, 360, 420], function () { return state.h; },
+          function (v) { state.h = v; });
+    paint();
+  })();
+</script>
 </body>
 </html>
