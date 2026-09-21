@@ -7,8 +7,13 @@
 <meta name="description" content="Benjamín García is an economist at the Central Bank of Chile, where he heads the Medium-Term Forecasting Department. Research in macroeconomics and monetary economics: DSGE and HANK models, behavioral macroeconomics, and forecasting.">
 <meta name="author" content="Benjamín García">
 <link rel="canonical" href="https://benjamingarcia.cl/">
+<link rel="alternate" hreflang="en" href="https://benjamingarcia.cl/">
+<link rel="alternate" hreflang="es" href="https://benjamingarcia.cl/es/">
+<link rel="alternate" hreflang="x-default" href="https://benjamingarcia.cl/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:type" content="profile">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_CL">
 <meta property="og:title" content="Benjamín García">
 <meta property="og:description" content="Economist at the Central Bank of Chile. Research in macroeconomics and monetary economics: DSGE and HANK models, behavioral macroeconomics, and forecasting.">
 <meta property="og:url" content="https://benjamingarcia.cl/">
@@ -169,12 +174,13 @@
   }
   .site-header.compact .titleline { max-height: 0; opacity: 0; margin-top: 0; }
 
-  .site-nav {
+  .topbar {
     position: absolute; top: 1rem; right: 1.25rem;
-    display: flex; gap: 1.05rem;
+    display: flex; align-items: center; gap: 1.05rem;
     transition: top .28s ease;
   }
-  .site-header.compact .site-nav { top: 1.4rem; }
+  .site-header.compact .topbar { top: 1.4rem; }
+  .site-nav { display: flex; gap: 1.05rem; }
   .site-nav a {
     color: #fff;
     font-size: .95rem;
@@ -184,6 +190,30 @@
   }
   .site-nav a:hover { text-decoration: underline; }
   .site-header.compact .site-nav a { font-size: .9rem; }
+
+  /* ES/EN language toggle */
+  .lang-toggle {
+    display: inline-flex;
+    flex: 0 0 auto;
+    border: 1px solid rgba(255, 255, 255, .78);
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(12, 17, 23, .32);
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    line-height: 1;
+  }
+  .lang-toggle a, .lang-toggle span { display: block; padding: .3rem .5rem; }
+  .lang-toggle a {
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .8);
+    transition: background-color .15s ease;
+  }
+  .lang-toggle a:hover { background: rgba(255, 255, 255, .22); }
+  .lang-toggle a:focus-visible { outline: 2px solid #fff; outline-offset: -3px; }
+  .lang-toggle span { background: rgba(255, 255, 255, .92); color: #151a21; }
 
   @media (max-width: 640px) {
     .header-inner { padding-bottom: 1rem; gap: .75rem; }
@@ -200,13 +230,24 @@
           rgba(12, 17, 23, .20) 68%,
           rgba(12, 17, 23, 0) 86%);
     }
-    .site-nav { top: .7rem; gap: .85rem; }
+    .topbar { top: .7rem; flex-direction: column-reverse; align-items: flex-end; gap: 0; }
+    .site-nav { gap: .85rem; }
+    .lang-toggle {
+      max-height: 2rem; margin-bottom: .5rem;
+      transition: max-height .28s ease, margin-bottom .28s ease, opacity .18s ease;
+    }
+    .site-header.compact .lang-toggle {
+      max-height: 0; margin-bottom: 0; opacity: 0; visibility: hidden; border-color: transparent;
+      transition: max-height .28s ease, margin-bottom .28s ease, opacity .18s ease, visibility 0s linear .28s;
+    }
     .site-nav a { font-size: .85rem; }
-    .site-header.compact .site-nav { top: 1.2rem; }
+    .site-header.compact .topbar { top: 1.2rem; }
     .site-header.compact .avatar { width: 0; height: 0; border-width: 0; opacity: 0; }
     .site-header.compact .header-inner { gap: 0; }
     .site-header.compact .site-nav a { font-size: .82rem; }
-    .site-header.compact .id { padding-right: 11.5rem; }
+    .site-header.compact h1 { font-size: 1rem; }
+    .site-header.compact .site-nav { gap: .7rem; }
+    .site-header.compact .id { padding-right: 11.8rem; }
   }
 
   hr { border: 0; border-top: 1px solid var(--rule); margin: 2.2rem 0; }
@@ -304,13 +345,13 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .site-header, .header-inner, .avatar, .site-header h1,
-    .titleline, .banner-scrim, .site-nav, .site-nav a { transition: none; }
+    .titleline, .banner-scrim, .topbar, .site-nav a, .lang-toggle, .lang-toggle a { transition: none; }
   }
 
   @media print {
     body { padding-top: 0; }
     .site-header { position: static; height: auto; background: none; box-shadow: none; overflow: visible; }
-    .banner-img, .banner-scrim, .site-nav { display: none; }
+    .banner-img, .banner-scrim, .topbar { display: none; }
     .header-inner { padding: 0 0 1rem; max-width: none; }
     .site-header h1, .titleline { color: #000; text-shadow: none; }
     details.abs { display: none; }
@@ -334,12 +375,18 @@
       <h1>Benjamín García</h1>
       <p class="titleline"><span class="tl-full">Economist · Head of the Medium-Term Forecasting Department, Central Bank of Chile</span><span class="tl-short" hidden>Economist · Central Bank of Chile</span></p>
     </div>
-    <nav class="site-nav">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="cv.pdf">CV</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="topbar">
+      <nav class="site-nav">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="cv.pdf">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <a href="es/" hreflang="es" lang="es" title="Versión en español">ES</a>
+        <span aria-current="true">EN</span>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -433,7 +480,7 @@ I am an economist at the Central Bank of Chile, where I head the Medium-Term For
           <div class="abstract-text">
             <p class="abs-lang">English translation</p>
             <p>Since the end of last year, financial markets have experienced volatility and stress, which have raised the premia between risky and safer assets. Relevant movements in the yield curve have also been observed. Analytically, several academic studies have shown that risk premia affect and propagate the effects of economic shocks on activity and aggregate demand. This note estimates the effects of financial premia on aggregate activity in the case of Chile, taking into account that the estimates may not reveal the structural effect of financial premia on activity, given the strong endogeneity between economic activity and financial instruments, which could persist even when using lags of the latter in the estimations.</p>
-            <p class="abs-lang">Original abstract in spanish</p>
+            <p class="abs-lang">Original abstract in Spanish</p>
             <p lang="es">Desde finales del año pasado, los mercados financieros han experimentado volatilidad y tensiones, las cuales han hecho aumentar los premios entre activos riesgosos y otros más seguros. Además, se han observado movimientos relevantes en la curva de retorno. Analíticamente, varios estudios académicos han mostrado que las primas por riesgo afectan y propagan los efectos de shocks económicos en la actividad y la demanda agregada. Esta nota tiene por objeto estimar los efectos de las primas financieras sobre la actividad agregada en el caso de Chile, teniendo en consideración que las estimaciones pueden no revelar el efecto estructural de las primas financieras en la actividad, debido a la fuerte endogeneidad presente entre la actividad económica y los instrumentos financieros, la que podría subsistir aun utilizando rezagos de estos últimos en las estimaciones.</p>
                      </div>
         </details>
@@ -529,10 +576,10 @@ I am an economist at the Central Bank of Chile, where I head the Medium-Term For
     <div class="pub">
       <div class="year">2022</div>
       <div>
-        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/953.html">A Macro Financial Model for the Chilean Economy</a></div>
-        <div class="meta">with Mauricio Calani, Tomás Gómez, Mario González, Sebastián Guarda, and Manuel Paillacar · Central Bank of Chile Working Paper 953</div>
+        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/954.html">Unconventional Credit Policies during Crises: A Structural Analysis of the Chilean Experience during the COVID-19 Pandemic</a></div>
+        <div class="meta">with Mario González, Sebastián Guarda, and Manuel Paillacar · Central Bank of Chile Working Paper 954</div>
         <details class="abs"><summary>Abstract</summary>
-          <div class="abstract-text">This paper presents a dynamic stochastic general equilibrium (DSGE) model built with a focus on frictional financial intermediation. The model, estimated for the Chilean economy, expands the quantitative analysis toolkit of the Central Bank of Chile, allowing for the study of how financial frictions shape the transmission mechanisms of several macroeconomic and financial shocks. The model builds on a simplified version of the Central Bank of Chile's main DSGE model, described in Garcia et al. (2019), augmented to include a rich financial sector and financial frictions. The extensions include optimizing financial intermediaries, corporate and mortgage lending, long-term government bonds within a segmented bonds market, and the possibility for households, firms, and banks to default. The result is the Central Bank of Chile's Macro Financial Model. The model captures many features of the Chilean economy and allows for a quantitative analysis of the financial system's role in explaining the business cycle and of the interaction between the real and financial sides of the economy.</div>
+          <div class="abstract-text">With the economy facing an unprecedented hit due to the COVID-19 pandemic, the Central Bank of Chile and the Chilean government jointly implemented several programs aimed at increasing liquidity and maintaining the flow of funds in the economy. In this paper, we extend the model described in Calani et al. (2022), a structural large-scale DSGE model with a financial system and financial frictions, to assess the impact of the different credit programs implemented during the COVID-19 crisis. We find that the policies' most significant impact was due to the FOGAPE program and from their joint ability to reduce credit risk. The quantitative analysis carried on in this paper shows that the contraction of GDP in 2020 was between 2.7 and 5.4 percentage points milder thanks to the implemented liquidity and credit policies.</div>
         </details>
       </div>
     </div>
@@ -540,10 +587,10 @@ I am an economist at the Central Bank of Chile, where I head the Medium-Term For
     <div class="pub">
       <div class="year">2022</div>
       <div>
-        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/954.html">Unconventional Credit Policies during Crises: A Structural Analysis of the Chilean Experience during the COVID-19 Pandemic</a></div>
-        <div class="meta">with Mario González, Sebastián Guarda, and Manuel Paillacar · Central Bank of Chile Working Paper 954</div>
+        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/953.html">A Macro Financial Model for the Chilean Economy</a></div>
+        <div class="meta">with Mauricio Calani, Tomás Gómez, Mario González, Sebastián Guarda, and Manuel Paillacar · Central Bank of Chile Working Paper 953</div>
         <details class="abs"><summary>Abstract</summary>
-          <div class="abstract-text">With the economy facing an unprecedented hit due to the COVID-19 pandemic, the Central Bank of Chile and the Chilean government jointly implemented several programs aimed at increasing liquidity and maintaining the flow of funds in the economy. In this paper, we extend the model described in Calani et al. (2022), a structural large-scale DSGE model with a financial system and financial frictions, to assess the impact of the different credit programs implemented during the COVID-19 crisis. We find that the policies' most significant impact was due to the FOGAPE program and from their joint ability to reduce credit risk. The quantitative analysis carried on in this paper shows that the contraction of GDP in 2020 was between 2.7 and 5.4 percentage points milder thanks to the implemented liquidity and credit policies.</div>
+          <div class="abstract-text">This paper presents a dynamic stochastic general equilibrium (DSGE) model built with a focus on frictional financial intermediation. The model, estimated for the Chilean economy, expands the quantitative analysis toolkit of the Central Bank of Chile, allowing for the study of how financial frictions shape the transmission mechanisms of several macroeconomic and financial shocks. The model builds on a simplified version of the Central Bank of Chile's main DSGE model, described in Garcia et al. (2019), augmented to include a rich financial sector and financial frictions. The extensions include optimizing financial intermediaries, corporate and mortgage lending, long-term government bonds within a segmented bonds market, and the possibility for households, firms, and banks to default. The result is the Central Bank of Chile's Macro Financial Model. The model captures many features of the Chilean economy and allows for a quantitative analysis of the financial system's role in explaining the business cycle and of the interaction between the real and financial sides of the economy.</div>
         </details>
       </div>
     </div>
@@ -682,6 +729,19 @@ I am an economist at the Central Bank of Chile, where I head the Medium-Term For
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
     update();
+  })();
+
+  // Language toggle: keep the current section when switching, and point at
+  // index.html when the page is opened as a local file.
+  (function () {
+    var link = document.querySelector('.lang-toggle a[hreflang]');
+    if (!link) return;
+    var ids = { about: 'sobre-mi', research: 'investigacion', contact: 'contacto' };
+    if (location.protocol === 'file:') link.href = link.href.replace(/\/$/, '/index.html');
+    link.addEventListener('click', function () {
+      var h = location.hash.slice(1);
+      link.hash = ids[h] || '';
+    });
   })();
 
   // Shorten the subtitle when the full version would need four or more lines.
