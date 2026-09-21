@@ -249,7 +249,15 @@
     .site-header.compact .site-nav { gap: .7rem; }
     .site-header.compact .id { padding-right: 15rem; }
   }
+  .name-short { display: none; }
   @media (max-width: 440px) {
+    .site-header.compact .name-full {
+      position: absolute; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(0 0 0 0); white-space: nowrap;
+    }
+    .site-header.compact .name-short { display: inline; }
+  }
+  @media (max-width: 359px) {
     .site-header h1 { transition: font-size .28s ease, opacity .18s ease; }
     .site-header.compact h1 { opacity: 0; visibility: hidden; }
   }
@@ -376,7 +384,7 @@
   <div class="header-inner">
     <img class="avatar" src="../assets/avatar.jpg" width="360" height="360" alt="Benjamín García">
     <div class="id">
-      <h1>Benjamín García</h1>
+      <h1><span class="name-full">Benjamín García</span><span class="name-short" aria-hidden="true">B. García</span></h1>
       <p class="titleline"><span class="tl-full">Economista · Jefe del Departamento de Proyecciones de Mediano Plazo, Banco Central de Chile</span><span class="tl-short" hidden>Economista · Banco Central de Chile</span></p>
     </div>
     <div class="topbar">
