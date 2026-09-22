@@ -261,15 +261,25 @@
   }
   .name-short { display: none; }
   @media (max-width: 440px) {
-    .site-header.compact .name-full {
+    .site-header.compact h1 {
       position: absolute; width: 1px; height: 1px; overflow: hidden;
       clip: rect(0 0 0 0); white-space: nowrap;
     }
-    .site-header.compact .name-short { display: inline; }
+    .site-header.compact .name-short {
+      display: block;
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      color: #fff;
+      white-space: nowrap;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, .95), 0 2px 10px rgba(0, 0, 0, .85), 0 0 26px rgba(0, 0, 0, .6);
+    }
   }
   @media (max-width: 359px) {
-    .site-header h1 { transition: font-size .28s ease, opacity .18s ease; }
-    .site-header.compact h1 { opacity: 0; visibility: hidden; }
+    .site-header.compact .name-short { display: none; }
   }
 
   hr { border: 0; border-top: 1px solid var(--rule); margin: 2.2rem 0; }
@@ -394,7 +404,8 @@
   <div class="header-inner">
     <img class="avatar" src="../assets/avatar.jpg" width="360" height="360" alt="Benjamín García">
     <div class="id">
-      <h1><span class="name-full">Benjamín García</span><span class="name-short" aria-hidden="true">B. García</span></h1>
+      <h1>Benjamín García</h1>
+      <span class="name-short" aria-hidden="true">B. García</span>
       <p class="titleline"><span class="tl-full">Economista · Jefe del Departamento de Proyecciones de Mediano Plazo, Banco Central de Chile</span><span class="tl-short" hidden>Economista · Banco Central de Chile</span></p>
     </div>
     <div class="topbar">
@@ -423,7 +434,7 @@ Economista del Banco Central de Chile, dirijo el Departamento de Proyecciones de
       Mis áreas de investigación son la macroeconomía, la economía monetaria, la economía laboral y las proyecciones macroeconómicas, con énfasis en la modelación estructural de equilibrio general. Trabajos recientes han sido publicados en el <em lang="en">IMF Economic Review</em>, el <em lang="en">Journal of Money, Credit and Banking</em> y el <em lang="en">Journal of Human Capital</em>.
     </p>
     <p>
-      Obtuve mi doctorado (Ph.D.) en Economía en la Universidad de California, Santa Cruz (2015), además de un magíster (M.A.) y una licenciatura (B.A.) en Economía en la Pontificia Universidad Católica de Chile.
+      Obtuve mi doctorado (Ph.D.) en Economía en la Universidad de California, Santa Cruz (2015), además de un magíster (M.A.) en Economía Aplicada y una licenciatura (B.A.) en Economía en la Pontificia Universidad Católica de Chile.
     </p>
   </section>
 
