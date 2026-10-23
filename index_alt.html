@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Preview · Benjamín García | Economist, Central Bank of Chile</title>
+<meta name="description" content="Benjamín García is an economist at the Central Bank of Chile, where he heads the Medium-Term Forecasting Department. Research in macroeconomics and monetary economics, with a focus on general equilibrium structural modelling.">
+<meta name="author" content="Benjamín García">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_CL">
+<meta property="og:title" content="Benjamín García">
+<meta property="og:description" content="Economist at the Central Bank of Chile. Research in macroeconomics and monetary economics, with a focus on general equilibrium structural modelling.">
+<meta property="og:url" content="https://benjamingarcia.cl/">
+<meta property="og:image" content="https://benjamingarcia.cl/assets/banner-c.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=Charis+SIL:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Benjamín García",
+  "jobTitle": "Head of the Medium-Term Forecasting Department",
+  "worksFor": { "@type": "Organization", "name": "Central Bank of Chile" },
+  "url": "https://benjamingarcia.cl/",
+  "email": "mailto:bgarcia@bcentral.cl",
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "University of California, Santa Cruz" },
+    { "@type": "CollegeOrUniversity", "name": "Pontificia Universidad Católica de Chile" }
+  ],
+  "sameAs": [
+    "https://ideas.repec.org/f/pga517.html",
+    "https://scholar.google.com/citations?user=ooop-kIAAAAJ",
+    "https://www.linkedin.com/in/benjamin-garcia-225a9174/",
+    "https://www.bcentral.cl/investigadores/benjamin-garcia"
+  ]
+}
+</script>
+<style>
+  :root {
+    --bg: #fcfbf9;
+    --ink: #21252e;
+    --muted: #6b7280;
+    --faint: #9aa0aa;
+    --accent: #245e7c;
+    --rule: #e3e0d9;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --header-tall: 420px;
+    --header-short: 64px;
+    color-scheme: light dark;
+  }
+  @media (max-width: 640px) {
+    :root { --header-tall: 260px; --header-short: 56px; }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --ink: #e6e4df;
+      --muted: #9aa0aa;
+      --faint: #6b7280;
+      --accent: #7fb3cf;
+      --rule: #2a2e36;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    padding-top: var(--header-tall);
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  section[id] { scroll-margin-top: calc(var(--header-short) + 1.2rem); }
+  .wrap {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 3rem;
+  }
+  a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+  a:hover { text-decoration-color: var(--accent); }
+
+  /* Sticky banner header */
+  .site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--header-tall);
+    z-index: 50;
+    overflow: hidden;
+    background: #10151b;
+    transition: height .28s ease, box-shadow .28s ease;
+  }
+  .site-header.compact {
+    height: var(--header-short);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, .22);
+  }
+  .banner-img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: 50% 35%;
+  }
+  .banner-scrim {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(to bottom, rgba(12, 17, 23, .46) 0%, rgba(12, 17, 23, 0) 20%),
+      radial-gradient(120% 95% at 8% 100%,
+        rgba(12, 17, 23, .84) 0%,
+        rgba(12, 17, 23, .55) 34%,
+        rgba(12, 17, 23, .12) 62%,
+        rgba(12, 17, 23, 0) 78%);
+    transition: background .28s ease;
+  }
+  .site-header.compact .banner-scrim { background: rgba(12, 17, 23, .70); }
+
+  .header-inner {
+    position: relative;
+    height: 100%;
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 0 1.25rem 1.15rem;
+    display: flex;
+    align-items: flex-end;
+    gap: .95rem;
+    transition: padding-bottom .28s ease;
+  }
+  .site-header.compact .header-inner { padding-bottom: .85rem; }
+
+  .avatar {
+    flex: 0 0 auto;
+    width: 184px; height: 184px;
+    border-radius: 9px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, .85);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .35);
+    transition: width .28s ease, height .28s ease, border-radius .28s ease, opacity .2s ease;
+  }
+  .site-header.compact .avatar { width: 34px; height: 34px; border-radius: 6px; border-width: 1.5px; }
+
+  .id { flex: 1 1 auto; min-width: 0; transition: padding-bottom .28s ease; }
+  .site-header.compact .id { padding-bottom: .45rem; }
+  .site-header h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 2.1rem;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .95), 0 2px 10px rgba(0, 0, 0, .85), 0 0 26px rgba(0, 0, 0, .6);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    transition: font-size .28s ease;
+  }
+  .site-header.compact h1 { font-size: 1.05rem; }
+  .titleline {
+    margin: .18rem 0 0;
+    max-height: 4rem;
+    opacity: 1;
+    overflow: hidden;
+    color: rgba(255, 255, 255, .95);
+    font-size: .95rem;
+    line-height: 1.35;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .95), 0 2px 10px rgba(0, 0, 0, .85), 0 0 26px rgba(0, 0, 0, .6);
+    transition: max-height .28s ease, opacity .18s ease, margin-top .28s ease;
+  }
+  .site-header.compact .titleline { max-height: 0; opacity: 0; margin-top: 0; }
+
+  .topbar {
+    position: absolute; top: 1rem; right: 1.25rem;
+    display: flex; align-items: center; gap: 1.05rem;
+    transition: top .28s ease;
+  }
+  .site-header.compact .topbar { top: 1.4rem; }
+  .site-nav { display: flex; gap: 1.05rem; }
+  .site-nav a {
+    color: #fff;
+    font-size: .95rem;
+    text-decoration: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .95), 0 2px 10px rgba(0, 0, 0, .85), 0 0 26px rgba(0, 0, 0, .6);
+    transition: font-size .28s ease;
+  }
+  .site-nav a:hover { text-decoration: underline; }
+  .site-header.compact .site-nav a { font-size: .9rem; }
+
+  /* ES/EN language toggle */
+  .lang-toggle {
+    display: inline-flex;
+    flex: 0 0 auto;
+    border: 1px solid rgba(255, 255, 255, .78);
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(12, 17, 23, .32);
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    line-height: 1;
+  }
+  .lang-toggle a, .lang-toggle span { display: block; padding: .3rem .5rem; }
+  .lang-toggle a {
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .8);
+    transition: background-color .15s ease;
+  }
+  .lang-toggle a:hover { background: rgba(255, 255, 255, .22); }
+  .lang-toggle a:focus-visible { outline: 2px solid #fff; outline-offset: -3px; }
+  .lang-toggle span { background: rgba(255, 255, 255, .92); color: #151a21; }
+  /* Flags as a visual cue, leading the code in both segments */
+  .lang-toggle a, .lang-toggle span { display: flex; align-items: center; gap: .32rem; }
+  .lang-toggle .flag {
+    display: block; flex: 0 0 auto;
+    width: 15px; height: 10px;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .28);
+  }
+
+  @media (max-width: 640px) {
+    .header-inner { padding-bottom: 1rem; gap: .75rem; }
+    .avatar { width: 112px; height: 112px; }
+    .site-header h1 { font-size: clamp(1.15rem, 5.4vw, 1.5rem); }
+    .titleline { font-size: .85rem; max-height: 6rem; }
+    .banner-img { object-position: 50% 65%; }
+    .banner-scrim {
+      background:
+        linear-gradient(to bottom, rgba(12, 17, 23, .46) 0%, rgba(12, 17, 23, 0) 22%),
+        radial-gradient(155% 125% at 12% 100%,
+          rgba(12, 17, 23, .88) 0%,
+          rgba(12, 17, 23, .62) 38%,
+          rgba(12, 17, 23, .20) 68%,
+          rgba(12, 17, 23, 0) 86%);
+    }
+    .topbar { top: .7rem; flex-direction: column-reverse; align-items: flex-end; gap: 0; }
+    .site-nav { gap: .85rem; }
+    .lang-toggle {
+      max-height: 2rem; margin-bottom: .5rem;
+      transition: max-height .28s ease, margin-bottom .28s ease, opacity .18s ease;
+    }
+    .site-header.compact .lang-toggle {
+      max-height: 0; margin-bottom: 0; opacity: 0; visibility: hidden; border-color: transparent;
+      transition: max-height .28s ease, margin-bottom .28s ease, opacity .18s ease, visibility 0s linear .28s;
+    }
+    .site-nav a { font-size: .85rem; }
+    .site-header.compact .topbar { top: 1.2rem; }
+    .site-header.compact .avatar { width: 0; height: 0; border-width: 0; opacity: 0; }
+    .site-header.compact .header-inner { gap: 0; }
+    .site-header.compact .site-nav a { font-size: .82rem; }
+    .site-header.compact h1 { font-size: 1rem; }
+    .site-header.compact .site-nav { gap: .7rem; }
+    .site-header.compact .id { padding-bottom: .15rem; }
+    .site-header.compact .id { padding-right: 11.8rem; }
+  }
+
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 2.2rem 0; }
+
+  /* Sections */
+  h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.35rem;
+    margin: 0 0 1rem;
+  }
+  h3 {
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 2rem 0 .8rem;
+  }
+  section p { margin: 0 0 1rem; }
+  #about p { text-align: justify; hyphens: auto; }
+  @media (max-width: 480px) {
+    #about p { text-align: left; }
+  }
+
+  /* Publication entries */
+  .pub {
+    display: grid;
+    grid-template-columns: 3.4rem 1fr;
+    gap: 0 .8rem;
+    margin-bottom: 1.05rem;
+  }
+  .pub .year { color: var(--faint); font-variant-numeric: tabular-nums; }
+  .pub .title { font-weight: 600; }
+  .pub .title a { color: var(--ink); text-decoration: none; }
+  .pub .title a:hover { color: var(--accent); text-decoration: underline; }
+  .pub .meta { color: var(--muted); font-size: .95rem; }
+  .pub .meta .venue { font-style: italic; }
+  .pub .links { font-size: .88rem; margin-top: .1rem; }
+  .pub .links a { margin-right: .8rem; }
+
+  /* Expandable abstracts */
+  details.abs { margin-top: .15rem; }
+  details.abs summary {
+    cursor: pointer;
+    color: var(--accent);
+    font-size: .88rem;
+    width: fit-content;
+    list-style: none;
+    user-select: none;
+  }
+  details.abs summary::-webkit-details-marker { display: none; }
+  details.abs summary::before { content: "\25B8\00A0"; font-size: .8em; }
+  details.abs[open] summary::before { content: "\25BE\00A0"; }
+  details.abs summary:hover { text-decoration: underline; }
+  details.abs .abstract-text {
+    color: var(--muted);
+    font-size: .92rem;
+    margin: .45rem 0 .2rem;
+    padding-left: .9rem;
+    border-left: 2px solid var(--rule);
+  }
+  details.abs .abstract-text p { margin: 0 0 .7rem; }
+  details.abs .abstract-text p:last-child { margin-bottom: 0; }
+  details.abs .abstract-text p.abs-lang {
+    margin: 0 0 .2rem;
+    font-size: .76rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  @media (max-width: 480px) {
+    .pub { grid-template-columns: 1fr; }
+    .pub .year { font-size: .85rem; }
+  }
+
+  /* Contact */
+  .contact-list { margin: 0; }
+  .contact-list dt { float: left; clear: left; width: 6.5rem; color: var(--muted); }
+  .contact-list dd { margin: 0 0 .4rem 7.5rem; }
+  @media (max-width: 480px) {
+    .contact-list dt { float: none; width: auto; }
+    .contact-list dd { margin-left: 0; margin-bottom: .7rem; }
+  }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--rule);
+    color: var(--faint);
+    font-size: .85rem;
+  }
+  footer p { margin: 0 0 .3rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .site-header, .header-inner, .avatar, .id, .site-header h1,
+    .titleline, .banner-scrim, .topbar, .site-nav a, .lang-toggle, .lang-toggle a { transition: none; }
+  }
+
+  @media print {
+    body { padding-top: 0; }
+    .site-header { position: static; height: auto; background: none; box-shadow: none; overflow: visible; }
+    .banner-img, .banner-scrim, .topbar { display: none; }
+    .header-inner { padding: 0 0 1rem; max-width: none; }
+    .site-header h1, .titleline { color: #000; text-shadow: none; }
+    details.abs { display: none; }
+  }
+  /* ---- Preview only: palette and type options ---------------------------- */
+  /* Palettes are applied by the script below as inline custom properties. */
+
+  /* Type: STIX Two Text headings, Public Sans text */
+  html[data-type="stix"] {
+    --serif: "STIX Two Text", "Times New Roman", serif;
+    --sans: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  html[data-type="stix"] body { font-size: .97rem; }
+  html[data-type="stix"] h2 { font-size: 1.55rem; }
+
+  /* Type: Charis SIL throughout */
+  html[data-type="charis"] {
+    --serif: "Charis SIL", Charter, "Bitstream Charter", Georgia, serif;
+    --sans: "Charis SIL", Charter, "Bitstream Charter", Georgia, serif;
+  }
+  html[data-type="charis"] body { font-size: .97rem; line-height: 1.7; }
+  html[data-type="charis"] h2 { font-size: 1.4rem; font-weight: 700; }
+  html[data-type="charis"] .pub .title { font-weight: 700; }
+  html[data-type="charis"] .lang-toggle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+
+  /* Type: Libre Franklin throughout */
+  html[data-type="franklin"] {
+    --serif: "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    --sans: "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  html[data-type="franklin"] body { font-size: .96rem; line-height: 1.68; }
+  html[data-type="franklin"] h2 { font-size: 1.38rem; letter-spacing: -0.012em; }
+  html[data-type="franklin"] .pub .title { font-weight: 600; }
+
+  /* Name sizes in the desktop header; phones keep the base clamp() and 1rem */
+  @media (min-width: 641px) {
+    html[data-type="stix"] .site-header h1 { font-size: 2.35rem; letter-spacing: 0; }
+    html[data-type="stix"] .site-header.compact h1 { font-size: 1.08rem; }
+    html[data-type="charis"] .site-header h1 { font-size: 2.05rem; font-weight: 700; letter-spacing: -0.005em; }
+    html[data-type="charis"] .site-header.compact h1 { font-size: 1.02rem; }
+    html[data-type="franklin"] .site-header h1 { font-size: 2.15rem; letter-spacing: -0.02em; }
+    html[data-type="franklin"] .site-header.compact h1 { font-size: 1.04rem; letter-spacing: -0.01em; }
+    /* Public Sans and Franklin set wider than Segoe/Roboto: keep the Spanish slim bar clear at 641px */
+    html[data-type="stix"] .site-header.compact .site-nav a,
+    html[data-type="franklin"] .site-header.compact .site-nav a { font-size: .86rem; }
+  }
+  @media (max-width: 640px) {
+    html[data-type="stix"] .site-header.compact .site-nav a,
+    html[data-type="franklin"] .site-header.compact .site-nav a { font-size: .79rem; }
+  }
+
+  /* Section labels in sentence case instead of tracked capitals */
+  html[data-labels="plain"] h3 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+    margin: 2.1rem 0 .75rem;
+  }
+  html[data-labels="plain"][data-type="franklin"] h3 { font-style: normal; font-weight: 600; font-size: 1rem; color: var(--muted); }
+  html[data-labels="plain"][data-type="current"] h3 { font-weight: 600; font-style: normal; font-size: 1.08rem; }
+  html[data-labels="plain"] details.abs .abstract-text p.abs-lang {
+    font-size: .84rem; letter-spacing: 0; text-transform: none; font-style: italic;
+  }
+  html[data-labels="plain"][data-type="franklin"] details.abs .abstract-text p.abs-lang { font-style: normal; font-weight: 600; }
+
+  /* Switcher panel (fixed system font so it does not change with the options) */
+  .pv {
+    position: fixed; right: 12px; bottom: 12px; z-index: 100;
+    width: 300px; max-width: calc(100vw - 24px);
+    font: 13px/1.35 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #e9ecef; background: rgba(24, 28, 34, .94);
+    border: 1px solid rgba(255, 255, 255, .14); border-radius: 10px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .3);
+    -webkit-font-smoothing: antialiased;
+  }
+  .pv-head { display: flex; align-items: center; justify-content: space-between; padding: 8px 10px 8px 12px; }
+  .pv-head strong { font-weight: 600; letter-spacing: 0; }
+  .pv button {
+    font: inherit; color: inherit; cursor: pointer;
+    background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 6px; padding: 4px 8px;
+  }
+  .pv button:hover { background: rgba(255, 255, 255, .16); }
+  .pv button:focus-visible { outline: 2px solid #9cc8ff; outline-offset: 1px; }
+  .pv button[aria-pressed="true"] { background: #e9ecef; color: #15191e; border-color: #e9ecef; }
+  .pv-body { padding: 0 12px 12px; display: grid; gap: 9px; }
+  .pv.collapsed .pv-body { display: none; }
+  .pv-row > span { display: block; color: #aab2bc; margin-bottom: 4px; }
+  .pv-opts { display: flex; flex-wrap: wrap; gap: 4px; }
+  .pv-presets button { flex: 1 1 auto; }
+  .pv-note { color: #aab2bc; font-size: 12px; margin: 0; }
+  .pv-sw { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: 0; box-shadow: 0 0 0 1px rgba(255,255,255,.35); }
+  @media (max-width: 640px) {
+    .pv { right: 8px; bottom: 8px; max-width: calc(100vw - 16px); }
+  }
+  @media print { .pv { display: none; } }
+</style>
+<script>
+  /* Preview only: restore the chosen style before first paint */
+  window.PV = (function () {
+
+    var root = document.documentElement;
+    var PAL = {
+      current: {
+        light: { bg: '#fcfbf9', ink: '#21252e', muted: '#6b7280', faint: '#9aa0aa', accent: '#245e7c', rule: '#e3e0d9' },
+        dark:  { bg: '#14161a', ink: '#e6e4df', muted: '#9aa0aa', faint: '#6b7280', accent: '#7fb3cf', rule: '#2a2e36' }
+      },
+      cool: {
+        light: { bg: '#f5f7f9', ink: '#17202b', muted: '#566170', faint: '#7d8794', accent: '#285c8a', rule: '#dde3ea' },
+        dark:  { bg: '#0f141a', ink: '#e4e9ef', muted: '#9aa5b2', faint: '#6b7684', accent: '#8fb9df', rule: '#243041' }
+      },
+      burgundy: {
+        light: { bg: '#ffffff', ink: '#1d1e21', muted: '#5d6067', faint: '#84878e', accent: '#8b2635', rule: '#e6e6e9' },
+        dark:  { bg: '#151517', ink: '#eae9e7', muted: '#a3a5aa', faint: '#74767c', accent: '#e3939d', rule: '#2b2b2f' }
+      },
+      spruce: {
+        light: { bg: '#f5f6f5', ink: '#1a1e1d', muted: '#59605e', faint: '#7f8784', accent: '#1f6150', rule: '#dde1df' },
+        dark:  { bg: '#111413', ink: '#e5e8e6', muted: '#9da5a2', faint: '#6c7471', accent: '#7cc4ad', rule: '#262b29' }
+      }
+    };
+    var PRESETS = {
+      a:    { c: 'cool',     t: 'stix',     l: 'plain' },
+      b:    { c: 'burgundy', t: 'charis',   l: 'plain' },
+      c:    { c: 'spruce',   t: 'franklin', l: 'plain' },
+      live: { c: 'current',  t: 'current',  l: 'caps' }
+    };
+    var NOTES = {
+      current: 'Source Serif 4 headings, system sans text (Segoe UI on Windows, SF on Apple, Roboto on Android).',
+      stix: 'STIX Two Text is the face built for scientific journal typesetting; Public Sans is a plain, neutral sans.',
+      charis: 'Charis SIL is a Charter derivative: one serif for everything, closest to a typeset paper.',
+      franklin: 'Libre Franklin for everything: no serif at all, the furthest from the current look.'
+    };
+    var state = { c: 'cool', t: 'stix', l: 'plain', m: 'auto' };
+    try {
+      var saved = JSON.parse(localStorage.getItem('pvStyle') || 'null');
+      if (saved) for (var k in state) if (saved[k]) state[k] = saved[k];
+    } catch (e) {}
+    var qs = new URLSearchParams(location.search);
+    ['c', 't', 'l', 'm'].forEach(function (k) { if (qs.get(k)) state[k] = qs.get(k); });
+    if (!PAL[state.c]) state.c = 'cool';
+    if (!NOTES[state.t]) state.t = 'stix';
+    if (state.l !== 'caps') state.l = 'plain';
+    if (['auto', 'light', 'dark'].indexOf(state.m) < 0) state.m = 'auto';
+
+    var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+    function isDark() { return state.m === 'dark' || (state.m === 'auto' && mq && mq.matches); }
+
+    function tokens() {
+      var p = PAL[state.c][isDark() ? 'dark' : 'light'];
+      for (var key in p) root.style.setProperty('--' + key, p[key]);
+      root.style.colorScheme = isDark() ? 'dark' : 'light';
+      root.setAttribute('data-type', state.t);
+      root.setAttribute('data-labels', state.l);
+    }
+    tokens();
+    return { PAL: PAL, PRESETS: PRESETS, NOTES: NOTES, state: state, mq: mq, tokens: tokens };
+  })();
+</script>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <picture>
+    <source media="(max-width: 640px)"
+            srcset="assets/banner-b-800.jpg 800w, assets/banner-b.jpg 1800w" sizes="100vw">
+    <img class="banner-img" src="assets/banner-c.jpg"
+         srcset="assets/banner-c-1100.jpg 1100w, assets/banner-c.jpg 1800w"
+         sizes="100vw" alt="" aria-hidden="true">
+  </picture>
+  <div class="banner-scrim" aria-hidden="true"></div>
+  <div class="header-inner">
+    <img class="avatar" src="assets/avatar.jpg" width="360" height="360" alt="Benjamín García">
+    <div class="id">
+      <h1>Benjamín García</h1>
+      <p class="titleline"><span class="tl-full">Economist · Head of the Medium-Term Forecasting Department, Central Bank of Chile</span><span class="tl-short" hidden>Economist · Central Bank of Chile</span></p>
+    </div>
+    <div class="topbar">
+      <nav class="site-nav">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="cv.pdf">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <a href="es/index_alt.html" hreflang="es" lang="es" title="Versión en español"><svg class="flag" viewBox="0 0 3 2" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect width="3" height="2" fill="#AA151B"/><rect y=".5" width="3" height="1" fill="#F1BF00"/></svg>ES</a>
+        <span aria-current="true"><svg class="flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><clipPath id="uk-diag"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#uk-diag)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>EN</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+I am an economist at the Central Bank of Chile, where I head the Medium-Term Forecasting Department in the Monetary Policy Division, leading the team that produces the Bank's official forecasts and policy analysis at that horizon. My work also involves building, extending and improving structural models behind that analysis. Previously, I led the Economic Modelling Department, where I co-authored the Bank's main structural model, <a href="https://ideas.repec.org/p/chb/bcchwp/833.html">XMAS</a>.
+    </p>
+    <p>
+      My research interests are macroeconomics, monetary economics, labor economics, and forecasting, with a focus on general equilibrium structural modelling. Recent work has appeared in the <em>IMF Economic Review</em>, the <em>Journal of Money, Credit and Banking</em>, and the <em>Journal of Human Capital</em>.
+    </p>
+    <p>
+      I hold a Ph.D. in Economics from the University of California, Santa Cruz (2015), as well as an M.A. in Applied Economics and a B.A. in Economics from the Pontificia Universidad Católica de Chile.
+    </p>
+  </section>
+
+  <hr>
+
+  <section id="research">
+    <h2>Research</h2>
+
+    <h3>Publications</h3>
+
+    <div class="pub">
+      <div class="year">2026</div>
+      <div>
+        <div class="title"><a href="https://doi.org/10.1057/s41308-026-00313-5">Shock-Dependent Cognitive Discounting and the Forward Guidance Puzzle</a></div>
+        <div class="meta">with Agustín Arias and Ignacio Rojas · <span class="venue">IMF Economic Review</span></div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">We introduce cognitive discounting into a standard dynamic stochastic general equilibrium (DSGE) model to address the forward guidance puzzle and propose an estimation strategy that employs system priors to ensure data-consistent responses to monetary policy. We show that implementing cognitive discounting as in Gabaix (2020) does not, by itself, resolve the forward guidance puzzle. In particular, attempting to replicate empirically estimated forward guidance effects substantially dampens the effectiveness of conventional monetary policy, contradicting empirical evidence. Our findings show that the coexistence of empirically plausible effects of both conventional monetary policy and forward guidance requires a degree of cognitive discounting that is specific to announcements of future policy shocks. This idiosyncratic discounting may stem from factors such as credibility constraints in forward guidance communication.</div>
+        </details>
+        <div class="links"><a href="https://ideas.repec.org/p/chb/bcchwp/994.html">related working paper with an application to Chile</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2026</div>
+      <div>
+        <div class="title"><a href="https://doi.org/10.1111/jmcb.13222">Central Bank Independence at Low Interest Rates</a></div>
+        <div class="meta">with Arsenios Skaperdas · <span class="venue">Journal of Money, Credit and Banking</span>, 58(6), 1871&ndash;1886</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">We create a new measure of the political pressure faced by the Federal Reserve based on the analysis of transcripts of the Chairs' testimonies to Congress. We find that the use of nontraditional policies at low interest rates led to increased political criticism and that criticism predicts legislative actions that threaten central bank independence. We develop a model where the probability of the monetary authority's future loss of independence is increasing in the use of nontraditional instruments, leading to attenuated monetary responses and higher inflation volatility. This attenuation can be mitigated under an institutional framework with clearly defined targets where the central bank is evaluated by how efficiently it achieves its goals.</div>
+        </details>
+        <div class="links"><a href="https://ideas.repec.org/p/chb/bcchwp/1003.html">related working paper</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2025</div>
+      <div>
+        <div class="title"><a href="https://doi.org/10.1086/734387">On the Response of Inflation and Monetary Policy to an Immigration Shock</a></div>
+        <div class="meta">with Juan Guerra-Salas · <span class="venue">Journal of Human Capital</span>, 19(2), 383&ndash;433</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">An immigration shock has an ambiguous effect on inflation, because there are multiple channels working in both directions. Cross-country empirical evidence on Venezuelan immigration in Latin America points to a net disinflationary effect. We study immigration and inflation in a general equilibrium model with search frictions in the labor market, which we calibrate to Chile, an emerging country that has experienced substantial immigration in recent years. A net disinflationary effect is consistent with a labor supply channel dominating an aggregate demand channel. We also find that the systematic response of monetary policy is quantitatively important for the propagation of the shock.</div>
+        </details>
+        <div class="links"><a href="https://ideas.repec.org/p/chb/bcchwp/872.html">related working paper</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2024</div>
+      <div>
+        <div class="title"><a href="https://doi.org/10.1016/j.latcb.2024.100125">Transmission Mechanisms in HANK: An Application to Chile</a></div>
+        <div class="meta">with Mario Giarda, Carlos Lizama, and Ignacio Rojas · <span class="venue">Latin American Journal of Central Banking</span>, 5(3)</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">Households in emerging economies are subject to significant income risk and have low access to financial markets. Leveraging multiple administrative microdata sources, this paper documents significant heterogeneity in asset holdings, income, and income cyclicality across the distribution of Chilean households, as well as considerable income risk. Considering this evidence, we compare the transmission mechanisms between Heterogeneous-Agent New-Keynesian models with search and matching (SAM) and sticky wage frictions (SW), and between one-liquid-asset (OA) and two-asset (TA) specifications. We propose a decomposition of consumption responses into direct, indirect, average, and cross-sectional effects. We show that the transmission mechanisms depend on the labor market setup: in SAM-OA the transmission operates through average and direct effects, while in SW-OA it is through cross-sectional effects. Assets also matter, the transmission in the SW-TA has stronger direct and average effects than SW-OA.</div>
+        </details>
+        <div class="links"><a href="https://ideas.repec.org/p/chb/bcchwp/1013.html">related working paper</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2021</div>
+      <div>
+        <div class="title"><a href="https://doi.org/10.64285/ensayosbcra78.y2021.105">Evolución y Uso de Modelos Estructurales en el Banco Central de Chile</a></div>
+        <div class="meta">with Mariana García-Schmidt · <span class="venue">Ensayos Económicos</span> (Central Bank of Argentina), 78, 28&ndash;46</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">The Central Bank of Chile (BCC) uses various models to analyze the Chilean economy and to assist board members in their decision-making. Its main structural model is called XMAS and it is a NeoKeynesian dynamic and stochastic general equilibrium model with a wide variety of sectors, rigidities, and shocks. This model is usually used as part of the monetary policy framework. As the economy is continually evolving, the need for new tools to answer new questions is evolving as well. Thus, to answer new questions, the BCC follows a strategy of incorporating into the XMAS only the necessary changes and creating new models, called satellites, for other issues. This document shows the main features of the XMAS and shows examples of changes made to this model in the past, as well as satellite models.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2009</div>
+      <div>
+        <div class="title"><a href="https://hdl.handle.net/20.500.12580/4814">Efectos de Primas Financieras sobre la Actividad Agregada</a></div>
+        <div class="meta">with Juan Pablo Medina · <span class="venue">Economía Chilena</span>, 12(3), 89&ndash;101</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">
+            <p class="abs-lang">English translation</p>
+            <p>Since the end of last year, financial markets have experienced volatility and stress, which have raised the premia between risky and safer assets. Relevant movements in the yield curve have also been observed. Analytically, several academic studies have shown that risk premia affect and propagate the effects of economic shocks on activity and aggregate demand. This note estimates the effects of financial premia on aggregate activity in the case of Chile, taking into account that the estimates may not reveal the structural effect of financial premia on activity, given the strong endogeneity between economic activity and financial instruments, which could persist even when using lags of the latter in the estimations.</p>
+            <p class="abs-lang">Original abstract in Spanish</p>
+            <p lang="es">Desde finales del año pasado, los mercados financieros han experimentado volatilidad y tensiones, las cuales han hecho aumentar los premios entre activos riesgosos y otros más seguros. Además, se han observado movimientos relevantes en la curva de retorno. Analíticamente, varios estudios académicos han mostrado que las primas por riesgo afectan y propagan los efectos de shocks económicos en la actividad y la demanda agregada. Esta nota tiene por objeto estimar los efectos de las primas financieras sobre la actividad agregada en el caso de Chile, teniendo en consideración que las estimaciones pueden no revelar el efecto estructural de las primas financieras en la actividad, debido a la fuerte endogeneidad presente entre la actividad económica y los instrumentos financieros, la que podría subsistir aun utilizando rezagos de estos últimos en las estimaciones.</p>
+                     </div>
+        </details>
+      </div>
+    </div>
+
+    <h3>Book chapters</h3>
+
+    <div class="pub">
+      <div class="year">2024</div>
+      <div>
+        <div class="title"><a href="https://hdl.handle.net/20.500.12580/8026">The Role of Progressivity on the Economic Impact of Fiscal Transfers: A HANK for Chile</a></div>
+        <div class="meta">with Mario Giarda and Carlos Lizama · in <span class="venue">Heterogeneity in Macroeconomics: Implications for Monetary Policy</span>, eds. S. Bauducco, A. Fernández, and G. Violante, Central Bank of Chile</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">During the Covid-19 pandemic, the Chilean government provided unprecedented economic assistance to households. Direct fiscal transfers through stimulus checks amounted to nine percent of the country's GDP. Additionally, three times during the period, policymakers allowed for the possibility of withdrawing up to ten percent of the workers' individual pension accounts savings. This policy provided households with access to additional resources equivalent to 19 percent of GDP. Overall, the extra liquidity provided amounted to 28 percent of GDP, thus becoming Chile's most extensive support package in recent history.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2023</div>
+      <div>
+        <div class="title"><a href="https://hdl.handle.net/20.500.12580/7506">Global Drivers and Macroeconomic Volatility in EMEs: A Dynamic-Factor, General-Equilibrium Perspective</a></div>
+        <div class="meta">with Gent Bajraj, Andrés Fernández, Miguel Fuentes, Jorge Lorca, Manuel Paillacar, and Juan Marcos Wlasiuk · in <span class="venue">Credibility of Emerging Markets, Foreign Investors' Risk Perceptions, and Capital Flows</span>, eds. Á. Aguirre, A. Fernández, and Ş. Kalemli-Özcan, Central Bank of Chile</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">A common view held by academics as well as policymakers assigns an important role to global factors as drivers of fluctuations in economic activity in emerging market economies (EMEs). This follows naturally from the fact that these economies are often small and open to trade in global goods and capital markets, which makes them vulnerable to shocks in these markets. However, the nature of these global forces as well as their transmission mechanism into EMEs continues to be debated and is the subject of an active research area in international macroeconomics. While an influential view postulates a financial origin in the form of a global financial cycle (Miranda-Agrippino and Rey, 2020), others have argued in favor of alternative global forces in the form of fluctuations in commodity prices (Fernández and others, 2017, 2018, 2020), changes in sovereign risks (Longstaff and others, 2011; Aguiar and others, 2016), and a common growth factor among EMEs (Claessens and others, 2012).</div>
+        </details>
+        <div class="links"><a href="https://ideas.repec.org/p/chb/bcchwp/963.html">related working paper</a></div>
+      </div>
+    </div>
+
+    <h3>Working papers</h3>
+
+    <div class="pub">
+      <div class="year">2024</div>
+      <div>
+        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/1013.html">Transmission Mechanisms in HANK: An Application to Chile</a></div>
+        <div class="meta">with Mario Giarda, Carlos Lizama, and Ignacio Rojas · Central Bank of Chile Working Paper 1013</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">Households in emerging economies are subject to significant income risk and have low access to financial markets. Leveraging multiple administrative microdata sources, this paper documents significant heterogeneity in asset holdings, income, and income cyclicality across the distribution of Chilean households, as well as considerable income risk. Considering this evidence, we compare the transmission mechanisms between Heterogeneous-Agent New-Keynesian models with search and matching (SAM) and sticky wage frictions (SW), and between one-liquid-asset (OA) and two-asset (TA) specifications. We propose a decomposition of consumption responses into direct, indirect, average, and cross-sectional effects. We show that the transmission mechanisms depend on the labor market setup: in SAM-OA the transmission operates through average and direct effects, while in SW-OA it is through cross-sectional effects. Assets also matter, the transmission in the SW-TA has stronger direct and average effects than SW-OA.</div>
+        </details>
+        <div class="links"><a href="https://doi.org/10.1016/j.latcb.2024.100125">related paper (Latin American Journal of Central Banking)</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2024</div>
+      <div>
+        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/1003.html">Central Bank Independence at Low Interest Rates</a></div>
+        <div class="meta">with Arsenios Skaperdas · Central Bank of Chile Working Paper 1003</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">We create a new measure of the political pressure faced by the Federal Reserve based on the analysis of transcripts of the Chairs' testimonies to Congress. We find that the use of non-traditional policies at low interest rates led to increased political criticism and that criticism predicts legislative actions that threaten central bank independence. We develop a model where the probability of the monetary authority's future loss of independence is increasing in the use of non-traditional instruments, leading to attenuated monetary responses and higher inflation volatility. We show that this attenuation can be mitigated under an institutional framework with clearly defined targets where the central bank is evaluated by how efficiently it achieves its goals.</div>
+        </details>
+        <div class="links"><a href="https://doi.org/10.1111/jmcb.13222">related paper (Journal of Money, Credit and Banking)</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2023</div>
+      <div>
+        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/1000.html">Time-Varying Expenditure Shares and Macroeconomic Dynamics</a></div>
+        <div class="meta">with Mario Giarda, Carlos Lizama, and Damián Romero · Central Bank of Chile Working Paper 1000</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">We examine the impact of income heterogeneity on macroeconomic dynamics by analyzing households' expenditure decisions across different goods over the business cycle. Using Chilean transaction-level expenditure data, we observe income-dependent systematic variations in expenditure shares over the business cycle, suggesting a relevant role for non-homothetic preferences. We embed these preferences into a Heterogeneous Agent New Keynesian model and analyze their influence on the transmission of fiscal transfers. We find two novel channels associated with non-homotheticities: aggregate consumption sensitivity to income and insurance through expenditure switching. In a calibration for Chile, we find that non-homotheticities lead to substantial amplification of the effects of fiscal transfers of up to fifty percent.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2023</div>
+      <div>
+        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/994.html">Forward Guidance: Estimating a Behavioral DSGE Model with System Priors</a></div>
+        <div class="meta">with Agustín Arias and Ignacio Rojas · Central Bank of Chile Working Paper 994</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">We introduce cognitive discounting into a full fledged monetary DSGE model to cope with the forward guidance puzzle and propose an estimation strategy that relies on system priors to guide the model into delivering data-consistent IRFs for monetary policy and forward guidance shocks. We find that the successful implementation of this behavioral hypothesis crucially hinges on allowing agents to entertain a cognitive discount factor specific for future monetary policy announcements. The estimated model attains a significantly better fit to the data than its rational expectations counterpart, while relying on only slightly modified estimates of structural parameters and substantial degrees of forward guidance discounting. Cognitive discounting of future events triggered by non-forward guidance shocks in our model is limited, and so is its contribution to the improvement of the marginal data density. We further find that professional forecasts are consistent with rational expectations and, thus, not appropriate for the estimation of forward guidance cognitive discounting.</div>
+        </details>
+        <div class="links"><a href="https://doi.org/10.1057/s41308-026-00313-5">related paper (IMF Economic Review)</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2022</div>
+      <div>
+        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/963.html">Global Drivers and Macroeconomic Volatility in EMEs: A Dynamic-Factor, General-Equilibrium Perspective</a></div>
+        <div class="meta">with Gent Bajraj, Andrés Fernández, Miguel Fuentes, Jorge Lorca, Manuel Paillacar, and Juan Marcos Wlasiuk · Central Bank of Chile Working Paper 963</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">We study the role of global drivers in emerging market economies (EMEs)' business cycles. Using a dynamic factor model, we first pin down the global drivers that are relevant to a sample of twelve EMEs. Our identification assumption allows for the well-known global financial cycle to coexist with additional global factors of different nature, i.e. commodities, growth/productivity. Next, to better understand how these global forces are transmitted into EMEs we zoom in on Chile, one of the EMEs in the sample, and augment a large-scale DSGE regularly used for policy analysis with the estimated global dynamic factor structure. This allows us to document the general equilibrium channels through which shocks in these global factors are transmitted into the business cycle of Chile and, in turn, the policy challenges that they entail. Our findings indicate a preponderant role of global drivers for EMEs' business cycles, with a third of their macro variability being traced back to shocks in global dynamic factors. While the global financial cycle is a relevant force, a factor associated to global prices and commodities appears equally important, with a relatively modest role played by pure growth/productivity forces. The general equilibrium analysis for Chile reveals that while some of the ensuing effects of shocks to the financial cycle offset each other, the opposite occurs when a shock to global prices materializes, calling for a more active monetary policy response.</div>
+        </details>
+        <div class="links"><a href="https://hdl.handle.net/20.500.12580/7506">related book chapter</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2022</div>
+      <div>
+        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/954.html">Unconventional Credit Policies during Crises: A Structural Analysis of the Chilean Experience during the COVID-19 Pandemic</a></div>
+        <div class="meta">with Mario González, Sebastián Guarda, and Manuel Paillacar · Central Bank of Chile Working Paper 954</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">With the economy facing an unprecedented hit due to the COVID-19 pandemic, the Central Bank of Chile and the Chilean government jointly implemented several programs aimed at increasing liquidity and maintaining the flow of funds in the economy. In this paper, we extend the model described in Calani et al. (2022), a structural large-scale DSGE model with a financial system and financial frictions, to assess the impact of the different credit programs implemented during the COVID-19 crisis. We find that the policies' most significant impact was due to the FOGAPE program and from their joint ability to reduce credit risk. The quantitative analysis carried on in this paper shows that the contraction of GDP in 2020 was between 2.7 and 5.4 percentage points milder thanks to the implemented liquidity and credit policies.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2022</div>
+      <div>
+        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/953.html">A Macro Financial Model for the Chilean Economy</a></div>
+        <div class="meta">with Mauricio Calani, Tomás Gómez, Mario González, Sebastián Guarda, and Manuel Paillacar · Central Bank of Chile Working Paper 953</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">This paper presents a dynamic stochastic general equilibrium (DSGE) model built with a focus on frictional financial intermediation. The model, estimated for the Chilean economy, expands the quantitative analysis toolkit of the Central Bank of Chile, allowing for the study of how financial frictions shape the transmission mechanisms of several macroeconomic and financial shocks. The model builds on a simplified version of the Central Bank of Chile's main DSGE model, described in Garcia et al. (2019), augmented to include a rich financial sector and financial frictions. The extensions include optimizing financial intermediaries, corporate and mortgage lending, long-term government bonds within a segmented bonds market, and the possibility for households, firms, and banks to default. The result is the Central Bank of Chile's Macro Financial Model. The model captures many features of the Chilean economy and allows for a quantitative analysis of the financial system's role in explaining the business cycle and of the interaction between the real and financial sides of the economy.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2020</div>
+      <div>
+        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/872.html">On the Response of Inflation and Monetary Policy to an Immigration Shock</a></div>
+        <div class="meta">with Juan Guerra-Salas · Central Bank of Chile Working Paper 872</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">An immigration shock has an ambiguous effect on inflation. On one hand, aggregate consumption increases with a suddenly larger population; this "demand channel" creates inflationary pressures. On the other hand, the labor market becomes more slack as immigrants search for jobs, containing wage growth; this "labor supply channel" creates disinflationary pressures. The response of an inflation-targeting central bank to an immigration shock is, therefore, not obvious. We study these competing channels in a New Keynesian model of a small open economy with search frictions in the labor market. Our simulations are designed to characterize the possible response of inflation and monetary policy in Chile, a small open emerging country that has experienced a substantial immigration flow in recent years.</div>
+        </details>
+        <div class="links"><a href="https://doi.org/10.1086/734387">related paper (Journal of Human Capital)</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2019</div>
+      <div>
+        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/833.html">XMAS: An Extended Model for Analysis and Simulations</a></div>
+        <div class="meta">with Sebastián Guarda, Markus Kirchner, and Rodrigo Tranamil · Central Bank of Chile Working Paper 833</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">The Extended Model for Analysis and Simulations (XMAS) is the Central Bank of Chile's newest dynamic stochastic general equilibrium (DSGE) model for macroeconomic projections and monetary policy analysis. Building on Medina and Soto (2007), the model includes several new features, in line with recent developments in the modeling of small open economies, particularly commodity-exporting emerging economies such as Chile. The extensions over the base model include the modeling of non-core inflation dynamics, a commodity sector with endogenous production and investment, a labor market with search and matching frictions that allows for labor variation on both the intensive and extensive margins, an augmented fiscal block, as well as additional shocks and other real and nominal frictions. These features allow for a more granular analysis and more comprehensive forecasts of the Chilean economy, improving the fit of the model to macroeconomic data in several dimensions.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2018</div>
+      <div>
+        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/819.html">Asymmetric Monetary Policy Responses and the Effects of a Rise in the Inflation Target</a></div>
+        <div class="meta">Central Bank of Chile Working Paper 819</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">The effective lower bound (ELB) on interest rates introduces an explicit non-linearity for feasible monetary policy paths: interest rates cannot go below a certain rate. In a forward looking environment, the ELB can affect the monetary policy decisions not only when the bound is reached, but also when there is a possibility that the bound may be reached in the future. In this context, as a recommendation for monetary policy in a low-inflation environment, Reifschneider and Williams (2002) propose an asymmetric Taylor Rule with a threshold level that automatically drives the interest rate to zero whenever they fall below one percent. I test the hypothesis that the Federal Reserve has behaved in a manner consistent with Reifschneider and Williams' advice, finding evidence of a negative correlation between the level of the interest rate and the strength of the monetary policy response. Using an estimated nonlinear DSGE model, I show that a monetary policy which act symmetrically and asymmetrically can have significantly different consequences. In particular, I study the relevance of this behavior for the analysis of a permanent rise of the inflation target.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2017</div>
+      <div>
+        <div class="title"><a href="https://ideas.repec.org/p/fip/fedgfe/2017-106.html">Inferring the Shadow Rate from Real Activity</a></div>
+        <div class="meta">with Arsenios Skaperdas · Finance and Economics Discussion Series 2017-106, Federal Reserve Board</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">We estimate a shadow rate consistent with the paths of time series capturing real activity. This allows us to quantify the real effects of unconventional monetary policy in terms of equivalent short-term interest rate movements. We find that large-scale asset purchases and forward guidance had significant real effects equivalent of up to a four percent reduction in the federal funds rate.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2016</div>
+      <div>
+        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/796.html">Zero Lower Bound Risk and Long-Term Inflation in a Time-Varying Economy</a></div>
+        <div class="meta">Central Bank of Chile Working Paper 796</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">Using a Time Varying Parameters Vector Auto Regression framework, I construct an index, the Zero Probability Index (ZPI), based on the probability of the nominal interest rate hitting the zero lower bound (ZLB) within 10 quarters. I show how the probability of reaching the ZLB evolves over time and measure how a rise in the inflation target can reduce this probability. High ZPI episodes tend to occur during recessions and are characterized by a combination of the initial state of the variables and the estimated volatility of the shocks. However, not all episodes of a high ZPI share the same causes. In the US recessions of the 1980s, the probability was influenced significantly by an exceptionally volatile environment that overcame the dampening influence of the period's high nominal interest rates. On the other hand, the high ZPI for the 2001 and 2007 recessions were mainly defined by an initial state of low interest rates. Because of this difference, an increase in the inflation target was much more effective in reducing the estimated probability of the interest rate reaching the ZLB in the latter episodes.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2016</div>
+      <div>
+        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/794.html">Welfare Costs of Inflation and Imperfect Competition in a Monetary Search Model</a></div>
+        <div class="meta">Central Bank of Chile Working Paper 794</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">In this paper, I quantitatively measure the welfare costs of inflation. I build into standard money-search models, such as Rocheteau and Wright (2005) and Lagos and Wright (2005), by introducing endogenous imperfect competition based on free entry decisions that allow for the share of the transaction surplus going to firms to be determined endogenously. Under this framework, the welfare cost of inflation is amplified through a feedback loop, in which restricted money demand reduces the number of firms that the market can support. In turn, this reduction increases market concentration, reduces the consumer surplus, and further decreases the incentives to hold money. I find that, depending on the calibration, between 63 to 90 percent of the estimated welfare costs of inflation can be attributed to the interaction between money holdings and market concentration.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2010</div>
+      <div>
+        <div class="title"><a href="https://ideas.repec.org/p/chb/bcchwp/592.html">Evidence on the Variability of the Monetary Policy Inertia for Inflation-Targeting Countries</a></div>
+        <div class="meta">Central Bank of Chile Working Paper 592</div>
+        <details class="abs"><summary>Abstract</summary>
+          <div class="abstract-text">In this paper we develop an alternative Taylor rule where the level of inertia depends on the gap between the actual and desired interest rates. This rule is estimated for six inflation-targeting countries, namely Chile, Colombia, Mexico, New Zealand, Peru, and South Korea. Evidence of a varying inertia is found for all the tested countries. While for the sample with stable interest rate movements this rule exhibits a fit similar to a classic Taylor rule, it provides a better fit for the post financial crisis sub-sample.</div>
+        </details>
+      </div>
+    </div>
+
+  </section>
+
+  <hr>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <dl class="contact-list">
+      <dt>Email</dt>
+      <dd><a href="mailto:bgarcia@bcentral.cl">bgarcia@bcentral.cl</a></dd>
+      <dt>CV</dt>
+      <dd><a href="cv.pdf">Curriculum vitae (PDF)</a></dd>
+      <dt>Profiles</dt>
+      <dd>
+        <a href="https://ideas.repec.org/f/pga517.html">RePEc/IDEAS</a> ·
+        <a href="https://scholar.google.com/citations?user=ooop-kIAAAAJ">Google Scholar</a> ·
+        <a href="https://www.linkedin.com/in/benjamin-garcia-225a9174/">LinkedIn</a> ·
+        <a href="https://www.bcentral.cl/investigadores/benjamin-garcia">Central Bank of Chile</a>
+      </dd>
+    </dl>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Benjamín García. Views expressed here are my own and do not necessarily represent those of the Central Bank of Chile. Banner photograph taken from Cerro San Cristóbal, Santiago, in June 2024 with a Sony α6700 and an E 18&ndash;135mm f/3.5&ndash;5.6 OSS lens (<a href="assets/banner-DSC02566.jpg">full uncropped photo</a>).</p>
+    <p>Last updated September 2026.</p>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var header = document.getElementById('siteHeader');
+    if (!header) return;
+    var compact = false, ticking = false;
+    function update() {
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      if (!compact && y > 90) { compact = true; header.classList.add('compact'); }
+      else if (compact && y < 40) { compact = false; header.classList.remove('compact'); }
+      ticking = false;
+    }
+    function onScroll() {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();
+  })();
+
+  // Language toggle: keep the current section when switching, and point at
+  // index.html when the page is opened as a local file.
+  (function () {
+    var link = document.querySelector('.lang-toggle a[hreflang]');
+    if (!link) return;
+    var ids = { about: 'sobre-mi', research: 'investigacion', contact: 'contacto' };
+    if (location.protocol === 'file:') link.href = link.href.replace(/\/$/, '/index.html');
+    link.addEventListener('click', function () {
+      var h = location.hash.slice(1);
+      link.hash = ids[h] || '';
+    });
+  })();
+
+  // Shorten the subtitle when the full version would need four or more lines.
+  (function () {
+    var line = document.querySelector('.titleline');
+    var full = document.querySelector('.tl-full');
+    var short = document.querySelector('.tl-short');
+    if (!line || !full || !short) return;
+    function fit() {
+      full.hidden = false; short.hidden = true;
+      var lh = parseFloat(getComputedStyle(line).lineHeight) || 18;
+      if (line.scrollHeight / lh > 3.4) { full.hidden = true; short.hidden = false; }
+    }
+    fit();
+    var pending = false;
+    window.addEventListener('resize', function () {
+      if (pending) return;
+      pending = true;
+      window.requestAnimationFrame(function () { pending = false; fit(); });
+    }, { passive: true });
+  })();
+</script>
+
+<!-- Preview only: style switcher -->
+<div class="pv" id="pv" role="region" aria-label="Style preview">
+  <div class="pv-head">
+    <strong>Style preview</strong>
+    <button type="button" id="pvToggle" aria-expanded="true">Hide</button>
+  </div>
+  <div class="pv-body">
+    <div class="pv-row"><span>Suggested pairings</span>
+      <div class="pv-opts pv-presets" data-group="preset">
+        <button type="button" data-v="a">A</button>
+        <button type="button" data-v="b">B</button>
+        <button type="button" data-v="c">C</button>
+        <button type="button" data-v="live">Live site</button>
+      </div>
+    </div>
+    <div class="pv-row"><span>Colours</span>
+      <div class="pv-opts" data-group="c">
+        <button type="button" data-v="current"><i class="pv-sw" style="background:#245e7c"></i>Current</button>
+        <button type="button" data-v="cool"><i class="pv-sw" style="background:#285c8a"></i>Cool gray, blue</button>
+        <button type="button" data-v="burgundy"><i class="pv-sw" style="background:#8b2635"></i>White, burgundy</button>
+        <button type="button" data-v="spruce"><i class="pv-sw" style="background:#1f6150"></i>Gray, green</button>
+      </div>
+    </div>
+    <div class="pv-row"><span>Type</span>
+      <div class="pv-opts" data-group="t">
+        <button type="button" data-v="current">Current</button>
+        <button type="button" data-v="stix">STIX Two + Public Sans</button>
+        <button type="button" data-v="charis">Charis SIL</button>
+        <button type="button" data-v="franklin">Libre Franklin</button>
+      </div>
+    </div>
+    <div class="pv-row"><span>Section labels</span>
+      <div class="pv-opts" data-group="l">
+        <button type="button" data-v="caps">Capitals</button>
+        <button type="button" data-v="plain">Sentence case</button>
+      </div>
+    </div>
+    <div class="pv-row"><span>Mode</span>
+      <div class="pv-opts" data-group="m">
+        <button type="button" data-v="auto">System</button>
+        <button type="button" data-v="light">Light</button>
+        <button type="button" data-v="dark">Dark</button>
+      </div>
+    </div>
+    <p class="pv-note" id="pvNote"></p>
+  </div>
+</div>
+<script>  (function () {
+    var PRESETS = PV.PRESETS, NOTES = PV.NOTES, state = PV.state, mq = PV.mq;
+    function apply() {
+      PV.tokens();
+      document.querySelectorAll('.pv-opts').forEach(function (g) {
+        var grp = g.getAttribute('data-group');
+        g.querySelectorAll('button').forEach(function (b) {
+          var v = b.getAttribute('data-v'), on;
+          if (grp === 'preset') {
+            var pr = PRESETS[v];
+            on = pr.c === state.c && pr.t === state.t && pr.l === state.l;
+          } else on = state[grp] === v;
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+      });
+      document.getElementById('pvNote').textContent = NOTES[state.t] || '';
+      var q = '?c=' + state.c + '&t=' + state.t + '&l=' + state.l + (state.m !== 'auto' ? '&m=' + state.m : '');
+      try { history.replaceState(null, '', q + location.hash); } catch (e) {}
+      try { localStorage.setItem('pvStyle', JSON.stringify(state)); } catch (e) {}
+      window.dispatchEvent(new Event('resize'));
+    }
+
+    document.getElementById('pv').addEventListener('click', function (e) {
+      var b = e.target.closest('.pv-opts button');
+      if (!b) return;
+      var grp = b.parentNode.getAttribute('data-group'), v = b.getAttribute('data-v');
+      if (grp === 'preset') { var pr = PRESETS[v]; state.c = pr.c; state.t = pr.t; state.l = pr.l; }
+      else state[grp] = v;
+      apply();
+    });
+    var panel = document.getElementById('pv'), tog = document.getElementById('pvToggle');
+    tog.addEventListener('click', function () {
+      var c = panel.classList.toggle('collapsed');
+      tog.textContent = c ? 'Show' : 'Hide';
+      tog.setAttribute('aria-expanded', c ? 'false' : 'true');
+    });
+    if (window.innerWidth <= 640) tog.click();  // start folded away on phones
+    if (mq && mq.addEventListener) mq.addEventListener('change', apply);
+
+    // Carry the chosen style across the ES/EN toggle.
+    var langLink = document.querySelector('.lang-toggle a[hreflang]');
+    if (langLink) langLink.addEventListener('click', function () { langLink.search = location.search; });
+
+    apply();
+  })();
+</script>
+</body>
+</html>
