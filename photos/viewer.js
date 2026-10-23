@@ -38,12 +38,13 @@
   /* Geometry: fit the photo into the stage, keep a strip of map free for the pin. */
   function geometry(p) {
     var W = window.innerWidth, H = window.innerHeight, small = W <= 640;
-    var top = $('.bar').offsetHeight, bottom = $('.dock').offsetHeight;
+    var top = $('.bar').offsetHeight;
+    var bottom = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--dock-h')) || $('.dock').offsetHeight;
     var padX = small ? 10 : 28, padY = small ? 6 : 10;
     var sx = padX, sy = top + padY, sw = W - 2 * padX, sh = H - top - bottom - 2 * padY;
     var s = Math.min(sw / p.w, sh / p.h, 1);
     if (hasLoc(p)) {
-      var need = small ? 58 : 120;               // free space wanted on one side
+      var need = small ? 58 : H <= 500 ? 64 : 120;   // free space wanted on one side
       var fx = (sw - p.w * s) / 2 + padX, fy = (sh - p.h * s) / 2;
       if (Math.max(fx, fy) < need) {
         var sX = (sw + 2 * padX - 2 * need) / p.w, sY = (sh - 2 * need) / p.h;
@@ -57,10 +58,26 @@
     var target = rightW >= belowH * 1.15
       ? { x: x + w + rightW / 2, y: y + h / 2 + PIN_H / 2 }
       : { x: W / 2, y: y + h + belowH / 2 + PIN_H / 2 - 2 };
-    return { x: x, y: y, w: w, h: h, target: target, W: W, H: H };
+    var g = { x: x, y: y, w: w, h: h, target: target, W: W, H: H, sides: 0 };
+
+    // Short landscape screens: try the full height, with the controls moved into
+    // side columns, and keep it when the photo comes out clearly larger.
+    if (H <= 500 && W > H) {
+      var side = Math.max($('.crumbs').offsetWidth, $('.lang-toggle').offsetWidth, $('.controls').offsetWidth, 140) + 16 + 14;
+      var s2 = Math.min((W - 2 * side) / p.w, (H - 16) / p.h, 1);
+      if (s2 > s * 1.08) {
+        var w2 = Math.round(p.w * s2), h2 = Math.round(p.h * s2);
+        var x2 = Math.round((W - w2) / 2), y2 = Math.round((H - h2) / 2);
+        g = { x: x2, y: y2, w: w2, h: h2, W: W, H: H, sides: side,
+              target: { x: x2 + w2 + (W - x2 - w2) / 2, y: H / 2 + PIN_H / 2 } };
+      }
+    }
+    return g;
   }
 
   function placeFrame(g) {
+    document.body.classList.toggle('sides', !!g.sides);
+    if (g.sides) document.body.style.setProperty('--side-w', (g.sides - 16 - 10) + 'px');
     frame.style.left = g.x + 'px';
     frame.style.top = g.y + 'px';
     frame.style.width = g.w + 'px';
