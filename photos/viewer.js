@@ -10,6 +10,64 @@
   var MAP_JS = 'https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js';
   var MAP_SRI = 'sha384-5+cfbwT0iiub6VsQAdn6yz16nr6sDiQoHx6tm4O8OVYXHYOxcffFmCJBL0dgdvGp';
   var STYLE = { light: 'https://tiles.openfreemap.org/styles/positron', dark: 'https://tiles.openfreemap.org/styles/dark' };
+  // OpenFreeMap's dark style is nearly black throughout. Recolour it with the site's
+  // dark slate palette: land lighter than water, visible roads, borders and labels.
+  var DARK_PAINT = {
+    'background': { 'background-color': '#1a222c' },
+    'water': { 'fill-color': '#0c1218' },
+    'waterway': { 'line-color': '#101a24' },
+    'landcover_ice_shelf': { 'fill-color': '#27313c' },
+    'landcover_glacier': { 'fill-color': '#27313c' },
+    'landuse_residential': { 'fill-color': '#222c37', 'fill-opacity': 0.6 },
+    'landcover_wood': { 'fill-color': '#1c2a2c' },
+    'landuse_park': { 'fill-color': '#1c2a2c' },
+    'building': { 'fill-color': '#242e3a', 'fill-outline-color': '#2c3745' },
+    'aeroway-taxiway': { 'line-color': '#2b3542' },
+    'aeroway-runway-casing': { 'line-color': 'rgba(80,95,112,0.6)' },
+    'aeroway-area': { 'fill-color': '#202a35' },
+    'aeroway-runway': { 'line-color': '#2f3a47' },
+    'road_area_pier': { 'fill-color': '#1a222c' },
+    'road_pier': { 'line-color': '#1a222c' },
+    'highway_path': { 'line-color': '#2b3643' },
+    'highway_minor': { 'line-color': '#2e3946' },
+    'highway_major_casing': { 'line-color': 'rgba(72,88,106,0.7)' },
+    'highway_major_inner': { 'line-color': '#364454' },
+    'highway_major_subtle': { 'line-color': '#313d4b' },
+    'highway_motorway_casing': { 'line-color': 'rgba(84,100,118,0.75)' },
+    'highway_motorway_inner': { 'line-color': '#405062' },
+    'highway_motorway_subtle': { 'line-color': '#354251' },
+    'railway_transit': { 'line-color': '#333e4b' },
+    'railway_minor': { 'line-color': '#333e4b' },
+    'railway': { 'line-color': '#333e4b' },
+    'railway_transit_dashline': { 'line-color': '#1a222c' },
+    'railway_minor_dashline': { 'line-color': '#1a222c' },
+    'railway_dashline': { 'line-color': '#1a222c' },
+    'highway_name_other': { 'text-color': '#7f8b98', 'text-halo-color': '#161d26' },
+    'highway_name_motorway': { 'text-color': '#8c98a5' },
+    'boundary_state': { 'line-color': '#3d4a5b' },
+    'boundary_country_z0-4': { 'line-color': '#58677a' },
+    'boundary_country_z5-': { 'line-color': '#58677a' },
+    'water_name': { 'text-color': '#6f879e', 'text-halo-color': 'rgba(12,18,24,0.8)' }
+  };
+  ['place_other', 'place_suburb', 'place_village'].forEach(function (id) {
+    DARK_PAINT[id] = { 'text-color': '#8e9aa8', 'text-halo-color': 'rgba(15,20,26,0.85)' };
+  });
+  ['place_town', 'place_city', 'place_city_large', 'place_state'].forEach(function (id) {
+    DARK_PAINT[id] = { 'text-color': '#b0bbc7', 'text-halo-color': 'rgba(15,20,26,0.85)' };
+  });
+  ['place_country_other', 'place_country_minor', 'place_country_major'].forEach(function (id) {
+    DARK_PAINT[id] = { 'text-color': '#bcc6d1', 'text-halo-color': 'rgba(15,20,26,0.85)' };
+  });
+  function recolourDark() {
+    if (!darkQuery.matches) return;
+    Object.keys(DARK_PAINT).forEach(function (id) {
+      if (!map.getLayer(id)) return;                 // the hosted style may change
+      var props = DARK_PAINT[id];
+      Object.keys(props).forEach(function (k) {
+        try { map.setPaintProperty(id, k, props[k]); } catch (e) { /* keep the original */ }
+      });
+    });
+  }
   var ZOOM = 9;
   var PIN_H = 38;
 
@@ -134,6 +192,7 @@
         fadeDuration: 200
       });
     } catch (e) { map = null; return; }         // no WebGL: plain background
+    map.on('style.load', recolourDark);
     marker = new maplibregl.Marker({ element: pinElement(), anchor: 'bottom' })
       .setLngLat([start.lon, start.lat]).addTo(map);
     moveMap(p, geometry(p), false);

@@ -5,6 +5,9 @@
   --muted: #566170;
   --faint: #7d8794;
   --accent: #285c8a;
+  --pin: #285c8a;
+  --pin-core: #fff;
+  --map-opacity: .8;
   --rule: #dde3ea;
   --rule-strong: #c5cdd7;
   --glass: rgba(245, 247, 249, .84);
@@ -23,6 +26,9 @@
     --muted: #9aa5b2;
     --faint: #6b7684;
     --accent: #8fb9df;
+    --pin: #5a88b3;
+    --pin-core: #d5dfe9;
+    --map-opacity: 1;
     --rule: #243041;
     --rule-strong: #34425a;
     --glass: rgba(15, 20, 26, .78);
@@ -62,7 +68,7 @@ button { font: inherit; color: inherit; }
   background: var(--bg);
   pointer-events: none;
 }
-#map .maplibregl-canvas { position: absolute; left: 0; top: 0; opacity: .8; transition: opacity .5s ease; }
+#map .maplibregl-canvas { position: absolute; left: 0; top: 0; opacity: var(--map-opacity); transition: opacity .5s ease; }
 #map.no-loc .maplibregl-canvas { opacity: .22; }
 #map .maplibregl-marker { position: absolute; left: 0; top: 0; will-change: transform; transition: opacity .3s ease; }
 #map .maplibregl-marker.is-hidden { opacity: 0; }
@@ -76,13 +82,13 @@ button { font: inherit; color: inherit; }
 /* Location pin: tip at the photo's location. */
 .pin { position: relative; width: 28px; height: 38px; }
 .pin svg { position: relative; display: block; width: 28px; height: 38px; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .35)); }
-.pin .body { fill: var(--accent); }
-.pin .core { fill: #fff; }
+.pin .body { fill: var(--pin); }
+.pin .core { fill: var(--pin-core); }
 .pin::before {
   content: ""; position: absolute; left: 50%; bottom: -9px;
   width: 26px; height: 18px; margin-left: -13px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--pin);
   opacity: 0;
   animation: pin-pulse 2.4s ease-out infinite;
 }
