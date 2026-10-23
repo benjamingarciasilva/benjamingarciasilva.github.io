@@ -705,7 +705,7 @@ I am an economist at the Central Bank of Chile, where I head the Medium-Term For
   </section>
 
   <footer>
-    <p>&copy; 2026 Benjamín García. Views expressed here are my own and do not necessarily represent those of the Central Bank of Chile. Banner photograph taken from Cerro San Cristóbal, Santiago, in June 2024 with a Sony α6700 and an E 18&ndash;135mm f/3.5&ndash;5.6 OSS lens (<a href="assets/banner-DSC02566.jpg">full uncropped photo</a>).</p>
+    <p>&copy; 2026 Benjamín García. Views expressed here are my own and do not necessarily represent those of the Central Bank of Chile. Banner photograph taken from Cerro San Cristóbal, Santiago, in June 2024 with a Sony α6700 and an E 18&ndash;135mm f/3.5&ndash;5.6 OSS lens (<a href="photos/#DSC02566">full uncropped photo</a>).</p>
     <p>Last updated September 2026.</p>
   </footer>
 
@@ -741,6 +741,12 @@ I am an economist at the Central Bank of Chile, where I head the Medium-Term For
       var h = location.hash.slice(1);
       link.hash = ids[h] || '';
     });
+  })();
+
+  // Photos link: open photos/index.html when the page is opened as a local file.
+  (function () {
+    var link = document.querySelector('footer a[href^="photos/"]');
+    if (link && location.protocol === 'file:') link.href = link.href.replace('/#', '/index.html#');
   })();
 
   // Shorten the subtitle when the full version would need four or more lines.

@@ -823,7 +823,7 @@ Economista del Banco Central de Chile, dirijo el Departamento de Proyecciones de
   </section>
 
   <footer>
-    <p>&copy; 2026 Benjamín García. Las opiniones expresadas aquí son personales y no representan necesariamente las del Banco Central de Chile. Fotografía del banner tomada desde el cerro San Cristóbal, Santiago, en junio de 2024, con una Sony α6700 y un lente E 18&ndash;135mm f/3.5&ndash;5.6 OSS (<a href="../assets/banner-DSC02566.jpg">foto completa sin recortar</a>).</p>
+    <p>&copy; 2026 Benjamín García. Las opiniones expresadas aquí son personales y no representan necesariamente las del Banco Central de Chile. Fotografía del banner tomada desde el cerro San Cristóbal, Santiago, en junio de 2024, con una Sony α6700 y un lente E 18&ndash;135mm f/3.5&ndash;5.6 OSS (<a href="fotos/#DSC02566">foto completa sin recortar</a>).</p>
     <p>Última actualización: septiembre de 2026.</p>
   </footer>
 
@@ -859,6 +859,12 @@ Economista del Banco Central de Chile, dirijo el Departamento de Proyecciones de
       var h = location.hash.slice(1);
       link.hash = ids[h] || '';
     });
+  })();
+
+  // Photos link: open fotos/index.html when the page is opened as a local file.
+  (function () {
+    var link = document.querySelector('footer a[href^="fotos/"]');
+    if (link && location.protocol === 'file:') link.href = link.href.replace('/#', '/index.html#');
   })();
 
   // Shorten the subtitle when the full version would need four or more lines.

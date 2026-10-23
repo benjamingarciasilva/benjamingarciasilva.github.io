@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fotos | Benjamín García</title>
+<meta name="description" content="Fotografías de Benjamín García, en el orden en que fueron tomadas, cada una sobre un mapa del lugar donde se tomó.">
+<meta name="author" content="Benjamín García">
+<link rel="canonical" href="https://benjamingarcia.cl/es/fotos/">
+<link rel="alternate" hreflang="en" href="https://benjamingarcia.cl/photos/">
+<link rel="alternate" hreflang="es" href="https://benjamingarcia.cl/es/fotos/">
+<link rel="alternate" hreflang="x-default" href="https://benjamingarcia.cl/photos/">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Fotos | Benjamín García">
+<meta property="og:url" content="https://benjamingarcia.cl/es/fotos/">
+<meta property="og:image" content="https://benjamingarcia.cl/assets/banner-DSC02566.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin>
+<link rel="stylesheet" href="../../photos/viewer.css">
+</head>
+<body>
+
+<div id="map" aria-hidden="true"></div>
+<div class="veil" aria-hidden="true"></div>
+
+<header class="bar">
+  <div class="crumbs">
+    <a class="home" href="../"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Benjamín García</span></a>
+    <span class="sep" aria-hidden="true">/</span>
+    <h1>Fotos</h1>
+  </div>
+  <div class="lang-toggle" role="group" aria-label="Idioma">
+    <span aria-current="true"><svg class="flag" viewBox="0 0 3 2" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect width="3" height="2" fill="#AA151B"/><rect y=".5" width="3" height="1" fill="#F1BF00"/></svg>ES</span>
+    <a href="../../photos/" hreflang="en" lang="en" title="English version"><svg class="flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><clipPath id="uk-diag"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#uk-diag)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>EN</a>
+  </div>
+</header>
+
+<main class="stage">
+  <figure class="frame" id="frame">
+    <img id="photo" alt="" decoding="async">
+    <div class="spinner" aria-hidden="true"></div>
+    <p class="error">No se pudo cargar esta foto.</p>
+    <button class="nav prev" type="button" aria-label="Foto anterior" title="Anterior (←)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="nav next" type="button" aria-label="Foto siguiente" title="Siguiente (→)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </figure>
+</main>
+
+<footer class="dock">
+  <div class="caption" aria-live="polite">
+    <div class="place" id="place"></div>
+    <div class="meta" id="meta"></div>
+  </div>
+  <div class="controls">
+    <span class="count" id="count"></span>
+    <button class="btn" id="random" type="button" aria-label="Foto al azar" title="Foto al azar (R)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h3.5c2 0 3.2 1 4.3 2.6l2.4 4.8c1.1 1.6 2.3 2.6 4.3 2.6H21"/><path d="M3 17h3.5c1.6 0 2.7-.6 3.6-1.7"/><path d="M14.4 8.7c.9-1.1 2-1.7 3.1-1.7H21"/><path d="M18 4l3 3-3 3"/><path d="M18 14l3 3-3 3"/></svg><span class="label">Al azar</span></button>
+  </div>
+</footer>
+<p class="credit">Mapa: <a href="https://openfreemap.org">OpenFreeMap</a> · <a href="https://www.openmaptiles.org/">© OpenMapTiles</a> · <a href="https://www.openstreetmap.org/copyright">© colaboradores de OpenStreetMap</a></p>
+<noscript><p>Esta página necesita JavaScript para mostrar las fotos.</p></noscript>
+
+<script>
+  window.PHOTO_PAGE = {
+    lang: 'es',
+    root: '../../',
+    other: '../../photos/',
+    strings: { altPlace: 'Foto tomada en {place}, el {date}', altDate: 'Foto tomada el {date}' }
+  };
+</script>
+<script src="../../photos/photos.js"></script>
+<script src="../../photos/viewer.js"></script>
+
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "21345c992f474a888e623f001f0b4cf0"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
