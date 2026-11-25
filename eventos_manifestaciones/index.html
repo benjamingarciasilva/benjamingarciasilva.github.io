@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Disrupciones de tráfico | Benjamín García</title>
+<meta name="description" content="Marchas, eventos masivos y cortes de tránsito previstos en el Estadio Nacional y Santiago Centro para los próximos 60 días, actualizados a diario.">
+<meta name="author" content="Benjamín García">
+<link rel="canonical" href="https://benjamingarcia.cl/eventos_manifestaciones/">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f7f9;
+    --panel: #ffffff;
+    --ink: #17202b;
+    --muted: #566170;
+    --faint: #7d8794;
+    --accent: #285c8a;
+    --rule: #dde3ea;
+    --rule-strong: #c5cdd7;
+    --bad: #b3261e;
+    --sans: "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --fs-caption: .78rem;
+    --fs-body: .96rem;
+    --fs-heading: 1.08rem;
+    --fs-title: 1.45rem;
+    --radius: 10px;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f141a;
+      --panel: #151c24;
+      --ink: #e4e9ef;
+      --muted: #9aa5b2;
+      --faint: #6b7684;
+      --accent: #8fb9df;
+      --rule: #243041;
+      --rule-strong: #34425a;
+      --bad: #f2b8b5;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+  a:hover { text-decoration-color: var(--accent); }
+
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 14px 24px; border-bottom: 1px solid var(--rule); }
+  .crumbs { display: flex; align-items: baseline; gap: .5rem; min-width: 0; white-space: nowrap; }
+  .home { display: inline-flex; align-items: center; gap: .4rem; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 1.04rem; letter-spacing: -0.01em; }
+  .home svg { width: 16px; height: 16px; flex: 0 0 auto; position: relative; top: 1px; }
+  .home:hover span { text-decoration: underline; text-underline-offset: 3px; }
+  .crumbs h1 { margin: 0; font-size: 1.04rem; font-weight: 400; color: var(--muted); letter-spacing: -0.01em; overflow: hidden; text-overflow: ellipsis; }
+  .crumbs .sep { color: var(--faint); }
+  @media (max-width: 640px) { .bar { padding: 12px 16px; } .home, .crumbs h1 { font-size: .98rem; } }
+
+  .ev { max-width: 72rem; margin: 0 auto; padding: 24px 24px 48px; display: grid; gap: 20px; }
+  @media (max-width: 640px) { .ev { padding: 16px 16px 40px; } }
+  .ev-tabs { display: inline-flex; justify-self: start; border: 1px solid var(--rule-strong); border-radius: 999px; padding: 3px; gap: 2px; max-width: 100%; }
+  .ev-tabs button { font-family: inherit; font-size: var(--fs-body); color: var(--muted); background: transparent; border: 0; border-radius: 999px; padding: 6px 16px; cursor: pointer; white-space: nowrap; }
+  .ev-tabs button[aria-selected="true"] { background: var(--ink); color: var(--bg); }
+  .ev-sheet { display: grid; gap: 20px; }
+  .ev-sheet[hidden] { display: none; }
+
+  .ev-take { margin: 0; font-size: var(--fs-body); min-height: 1.5em; }
+  .ev-sub { margin: 4px 0 0; font-size: var(--fs-caption); color: var(--muted); }
+  .ev-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 12px; }
+  .ev-card { background: var(--panel); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px; min-width: 0; }
+  .ev-card h2 { font-size: var(--fs-heading); font-weight: 600; margin: 0; }
+  .ev-note { font-size: var(--fs-caption); color: var(--muted); margin: 4px 0 12px; }
+  .ev-tile-label { font-size: var(--fs-caption); color: var(--muted); }
+  .ev-tile-big { font-weight: 600; font-size: var(--fs-heading); line-height: 1.3; margin: 4px 0; min-height: 1.3em; }
+  .ev-tile-sub { color: var(--muted); min-height: 1.3em; }
+  .ev-tile-chip { display: inline-block; margin-top: 8px; }
+
+  .ev-cardhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .ev-switch { display: inline-flex; border: 1px solid var(--rule-strong); border-radius: 999px; padding: 2px; gap: 2px; }
+  .ev-switch button { font-family: inherit; font-size: var(--fs-caption); color: var(--muted); background: transparent; border: 0; border-radius: 999px; padding: 3px 12px; cursor: pointer; font-variant-numeric: tabular-nums; }
+  .ev-switch button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+  .ev-calwrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); gap: 20px; align-items: start; }
+  .ev-cal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; max-width: 30rem; min-height: 14rem; }
+  .ev-dow { font-size: var(--fs-caption); color: var(--muted); text-align: center; padding-bottom: 2px; }
+  .ev-day { aspect-ratio: 1 / 1; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: var(--fs-caption); font-variant-numeric: tabular-nums; border: 1px solid var(--rule); background: transparent; color: var(--ink); padding: 0; font-family: inherit; line-height: 1.1; }
+  .ev-day.is-out { visibility: hidden; }
+  .ev-day.is-past { opacity: .4; }
+  .ev-day.has-ev { cursor: pointer; border-color: transparent; }
+  .ev-day.is-strong { color: var(--bg); }
+  .ev-day.is-today { box-shadow: inset 0 0 0 2px var(--ink); }
+  .ev-day.is-sel { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .ev-day .ev-m { font-size: .7em; opacity: .85; }
+  .ev-legend { display: flex; flex-wrap: wrap; gap: 8px 12px; margin-top: 12px; font-size: var(--fs-caption); color: var(--muted); }
+  .ev-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .ev-legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+
+  .ev-detail h3 { font-size: var(--fs-body); font-weight: 600; margin: 0 0 8px; }
+  .ev-empty { font-size: var(--fs-caption); color: var(--muted); }
+  .ev-item { border-top: 1px solid var(--rule); padding: 8px 0; display: grid; gap: 2px; }
+  .ev-item:first-of-type { border-top: 0; padding-top: 0; }
+  .ev-item b { font-weight: 600; }
+  .ev-meta { font-size: var(--fs-caption); color: var(--muted); }
+  .ev-chip { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: var(--fs-caption); white-space: nowrap; }
+
+  .ev-list { container-type: inline-size; }
+  .ev-table { width: 100%; border-collapse: collapse; font-size: var(--fs-caption); }
+  .ev-table th { text-align: left; font-weight: 600; color: var(--muted); padding: 4px 8px 4px 0; border-bottom: 1px solid var(--rule); }
+  .ev-table td { padding: 8px 8px 8px 0; vertical-align: top; border-bottom: 1px solid var(--rule); }
+  .ev-table td:nth-child(1) { white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .ev-table td:nth-child(2) { font-weight: 600; font-size: var(--fs-body); }
+  .ev-table td:nth-child(4) { white-space: nowrap; }
+  .ev-table tr.lv-1 td { color: var(--muted); }
+  .ev-table td:nth-child(4) span { display: inline-block; padding: 1px 8px; border-radius: 999px; }
+  @container (max-width: 46rem) {
+    .ev-table thead { display: none; }
+    .ev-table, .ev-table tbody, .ev-table tr, .ev-table td { display: block; }
+    .ev-table tr { border-top: 1px solid var(--rule); padding: 8px 0; }
+    .ev-table tbody tr:first-child { border-top: 0; }
+    .ev-table td { border: 0; padding: 2px 0; }
+    .ev-table td:empty { display: none; }
+    .ev-table td:nth-child(1) { color: var(--muted); }
+    .ev-table td:nth-child(3) { display: none; }
+    .ev-table td:nth-child(4) { margin: 2px 0 4px; }
+    #estadio .ev-table td:nth-child(5)::before { content: "Av. Grecia: "; color: var(--muted); }
+    #centro .ev-table td:nth-child(5)::before { content: "Tránsito y Metro: "; color: var(--muted); }
+    .ev-table td:nth-child(6)::before { content: "Horario: "; color: var(--muted); }
+    .ev-table td:nth-child(7)::before { content: "Cortes: "; color: var(--muted); }
+    .ev-table td:nth-child(8)::before { content: "Nota: "; color: var(--muted); }
+    .ev-table td:nth-child(9)::before { content: "Fuente: "; color: var(--muted); }
+  }
+  .ev-fail { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 6rem; color: var(--muted); font-size: var(--fs-caption); }
+  .ev-fail::before { content: ""; width: .375rem; height: .375rem; border-radius: 50%; background: var(--bad); }
+  .ev-foot { font-size: var(--fs-caption); color: var(--muted); margin: 0; }
+  @media print {
+    .ev-tabs, .ev-switch { display: none; }
+    .ev-sheet[hidden] { display: grid !important; }
+    .ev-sheet + .ev-sheet { break-before: page; }
+  }
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="crumbs">
+    <a class="home" href="../es/"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Benjamín García</span></a>
+    <span class="sep" aria-hidden="true">/</span>
+    <h1>Disrupciones de tráfico</h1>
+  </div>
+</header>
+
+<main class="ev">
+  <div class="ev-tabs" role="tablist" aria-label="Hoja">
+    <button type="button" role="tab" id="tab-estadio" data-sheet="estadio" aria-controls="estadio" aria-selected="true">Estadio Nacional</button>
+    <button type="button" role="tab" id="tab-centro" data-sheet="centro" aria-controls="centro" aria-selected="false">Santiago Centro</button>
+  </div>
+
+  <section class="ev-sheet" id="estadio" role="tabpanel" aria-labelledby="tab-estadio">
+    <div>
+      <p class="ev-take" id="en-takeaway">Cargando…</p>
+      <p class="ev-sub">Eventos en el Estadio Nacional de los próximos 60 días y su probabilidad de cortes o congestión en Av. Grecia.</p>
+    </div>
+    <div class="ev-tiles">
+      <div class="ev-card">
+        <div class="ev-tile-label">Hoy</div>
+        <div class="ev-tile-big" id="en-hoy-evento">—</div>
+        <div class="ev-tile-sub" id="en-hoy-hora">—</div>
+      </div>
+      <div class="ev-card">
+        <div class="ev-tile-label">Próximo evento con impacto probable</div>
+        <div class="ev-tile-big" id="en-prox-evento">—</div>
+        <div class="ev-tile-sub"><span id="en-prox-fecha">—</span> · <span id="en-prox-impacto">—</span></div>
+        <div class="ev-tile-chip"><span class="ev-chip" id="en-prox-prob">—</span></div>
+      </div>
+    </div>
+    <div class="ev-card">
+      <div class="ev-cardhead">
+        <h2>Calendario</h2>
+        <div class="ev-switch" role="group" aria-label="Días a mostrar">
+          <button type="button" data-dias="30" aria-pressed="true">30 días</button>
+          <button type="button" data-dias="60" aria-pressed="false">60 días</button>
+        </div>
+      </div>
+      <p class="ev-note">Toca un día marcado para ver el detalle. El color indica la probabilidad de cortes o congestión en Grecia.</p>
+      <div class="ev-calwrap">
+        <div>
+          <div class="ev-cal" id="en-cal"></div>
+          <div class="ev-legend" id="en-leyenda"></div>
+        </div>
+        <div class="ev-detail" id="en-detalle"></div>
+      </div>
+    </div>
+    <div class="ev-card ev-list">
+      <h2>Todos los eventos</h2>
+      <p class="ev-note">Ordenados por fecha. "Baja" significa que el evento probablemente no será en el Nacional.</p>
+      <table class="ev-table">
+        <thead><tr><th>Fecha</th><th>Evento</th><th>Tipo</th><th>Probabilidad</th><th>Av. Grecia</th><th>Horario</th><th>Cortes y desvíos</th><th>Nota</th><th>Fuente</th></tr></thead>
+        <tbody id="en-tabla"></tbody>
+      </table>
+    </div>
+    <p class="ev-foot">Revisado: <span id="en-revisado">—</span>.</p>
+  </section>
+
+  <section class="ev-sheet" id="centro" role="tabpanel" aria-labelledby="tab-centro" hidden>
+    <div>
+      <p class="ev-take" id="sc-takeaway">Cargando…</p>
+      <p class="ev-sub">Marchas y otros eventos en Santiago Centro de los próximos 60 días y su probabilidad de cortes, desvíos o cierres de Metro.</p>
+    </div>
+    <div class="ev-tiles">
+      <div class="ev-card">
+        <div class="ev-tile-label">Hoy</div>
+        <div class="ev-tile-big" id="sc-hoy-evento">—</div>
+        <div class="ev-tile-sub" id="sc-hoy-hora">—</div>
+      </div>
+      <div class="ev-card">
+        <div class="ev-tile-label">Próximo evento con impacto probable</div>
+        <div class="ev-tile-big" id="sc-prox-evento">—</div>
+        <div class="ev-tile-sub"><span id="sc-prox-fecha">—</span> · <span id="sc-prox-impacto">—</span></div>
+        <div class="ev-tile-chip"><span class="ev-chip" id="sc-prox-prob">—</span></div>
+      </div>
+    </div>
+    <div class="ev-card">
+      <div class="ev-cardhead">
+        <h2>Calendario</h2>
+        <div class="ev-switch" role="group" aria-label="Días a mostrar">
+          <button type="button" data-dias="30" aria-pressed="true">30 días</button>
+          <button type="button" data-dias="60" aria-pressed="false">60 días</button>
+        </div>
+      </div>
+      <p class="ev-note">Toca un día marcado para ver el detalle. El color indica la probabilidad de cortes, desvíos o cierres de Metro en el centro.</p>
+      <div class="ev-calwrap">
+        <div>
+          <div class="ev-cal" id="sc-cal"></div>
+          <div class="ev-legend" id="sc-leyenda"></div>
+        </div>
+        <div class="ev-detail" id="sc-detalle"></div>
+      </div>
+    </div>
+    <div class="ev-card ev-list">
+      <h2>Todos los eventos</h2>
+      <p class="ev-note">Ordenados por fecha. "Baja" significa que el evento aún no tiene fecha, recorrido o programación que afecte el tránsito.</p>
+      <table class="ev-table">
+        <thead><tr><th>Fecha</th><th>Evento</th><th>Tipo</th><th>Probabilidad</th><th>Tránsito y Metro</th><th>Horario</th><th>Cortes y desvíos</th><th>Nota</th><th>Fuente</th></tr></thead>
+        <tbody id="sc-tabla"></tbody>
+      </table>
+    </div>
+    <p class="ev-foot">Revisado: <span id="sc-revisado">—</span>.</p>
+  </section>
+
+  <p class="ev-foot">Se actualiza automáticamente dos veces al día, con un asistente de IA que revisa prensa y avisos oficiales (Delegación Presidencial, municipalidades, Metro, Transporte Informa). Las probabilidades son una evaluación sobre esas fuentes, no un dato oficial; ante la duda, revisa la fuente de cada evento.</p>
+</main>
+<noscript><p style="text-align:center">Esta página necesita JavaScript para mostrar los eventos.</p></noscript>
+
+<script>
+(() => {
+  const TZ = 'America/Santiago';
+  const DIAS = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'];
+  const MES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+  const NIV = [{ n: 4, t: 'Confirmado' }, { n: 3, t: 'Muy probable' }, { n: 2, t: 'Probable' }, { n: 1, t: 'Baja' }];
+  const MIX = { 4: 90, 3: 62, 2: 36, 1: 14 };
+  const SHEETS = [
+    { key: 'estadio', p: 'en', ds: 'eventos', rev: 'revision', impact: 'grecia', sinHoy: 'No hay eventos informados para hoy en el Nacional.' },
+    { key: 'centro', p: 'sc', ds: 'centro', rev: 'centro_revision', impact: 'impacto', sinHoy: 'No hay marchas ni eventos informados para hoy en el centro.' },
+  ];
+  const store = {};
+  ['eventos', 'revision', 'centro', 'centro_revision'].forEach((id) => { store[id] = { status: 'loading', data: [] }; });
+  const selected = {};
+  let dias = 30;
+  const $ = (id) => document.getElementById(id);
+
+  const todayIso = () => new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  const addDays = (iso, n) => { const d = new Date(iso + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
+  const dowMon = (iso) => (new Date(iso + 'T12:00:00Z').getUTCDay() + 6) % 7;
+  const label = (iso) => { const d = new Date(iso + 'T12:00:00Z'); return DIAS[d.getUTCDay()] + ' ' + d.getUTCDate() + ' ' + MES[d.getUTCMonth()]; };
+  const fill = (lv) => 'color-mix(in srgb, var(--accent) ' + (MIX[lv] || 0) + '%, transparent)';
+  const chip = (el, lv) => { el.style.background = fill(lv); el.style.color = lv >= 3 ? 'var(--bg)' : 'var(--ink)'; };
+  const fail = (box) => { const f = document.createElement('div'); f.className = 'ev-fail'; f.textContent = 'No se pudo cargar'; box.replaceChildren(f); };
+  const safeUrl = (u) => (typeof u === 'string' && /^https?:\/\//.test(u) ? u : null);
+
+  function applyTab(key) {
+    if (!SHEETS.some((s) => s.key === key)) key = SHEETS[0].key;
+    SHEETS.forEach((s) => { $(s.key).hidden = s.key !== key; });
+    document.querySelectorAll('.ev-tabs [data-sheet]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.sheet === key)));
+    return key;
+  }
+  document.querySelectorAll('.ev-tabs [data-sheet]').forEach((b) => {
+    b.addEventListener('click', () => { const k = applyTab(b.dataset.sheet); history.replaceState(null, '', '#' + k); });
+  });
+  document.querySelectorAll('.ev-switch button[data-dias]').forEach((b) => {
+    b.addEventListener('click', () => { dias = Number(b.dataset.dias) === 60 ? 60 : 30; drawAll(); });
+  });
+  applyTab(location.hash.slice(1));
+
+  function drawRevision(s) {
+    const r = store[s.rev];
+    const ok = r.status === 'ok' && r.data.length;
+    $(s.p + '-takeaway').textContent = ok ? r.data[0].resumen : (r.status === 'error' ? 'No se pudo cargar la última revisión.' : 'Cargando…');
+    $(s.p + '-revisado').textContent = ok ? r.data[0].revisado_texto : '—';
+  }
+
+  function drawTiles(s, win, today, status) {
+    const hoyE = $(s.p + '-hoy-evento'), hoyH = $(s.p + '-hoy-hora');
+    const pE = $(s.p + '-prox-evento'), pF = $(s.p + '-prox-fecha'), pG = $(s.p + '-prox-impacto'), pP = $(s.p + '-prox-prob');
+    if (status !== 'ok') {
+      [hoyE, hoyH, pE, pF, pG].forEach((el) => { el.textContent = status === 'error' ? 'No se pudo cargar' : '—'; });
+      pP.textContent = '—'; pP.style.background = 'transparent';
+      return;
+    }
+    const hoy = win.filter((r) => r.fecha === today || r.fecha_alt === today).sort((a, b) => b.nivel - a.nivel)[0];
+    if (hoy) { hoyE.textContent = hoy.evento; hoyH.textContent = hoy.hora; }
+    else { hoyE.textContent = 'Sin eventos'; hoyH.textContent = s.sinHoy; }
+    const prox = win.find((r) => r.fecha > today && r.nivel >= 2);
+    if (prox) {
+      pE.textContent = prox.evento; pF.textContent = prox.fecha_texto; pG.textContent = prox[s.impact] || '';
+      pP.textContent = prox.probabilidad; chip(pP, prox.nivel);
+    } else {
+      pE.textContent = 'Nada en los próximos 60 días';
+      pF.textContent = '—'; pG.textContent = '—'; pP.textContent = '—'; pP.style.background = 'transparent';
+    }
+  }
+
+  function drawDetail(s, byDay, day) {
+    const box = $(s.p + '-detalle');
+    box.replaceChildren();
+    const h = document.createElement('h3');
+    const evs = day ? (byDay.get(day) || []) : [];
+    h.textContent = day ? label(day) : 'Detalle';
+    box.appendChild(h);
+    if (!evs.length) {
+      const p = document.createElement('p'); p.className = 'ev-empty';
+      p.textContent = 'Sin eventos este día.'; box.appendChild(p); return;
+    }
+    evs.forEach(({ r, alt }) => {
+      const it = document.createElement('div'); it.className = 'ev-item';
+      const top = document.createElement('div');
+      const c = document.createElement('span'); c.className = 'ev-chip'; c.textContent = r.probabilidad; chip(c, r.nivel);
+      const b = document.createElement('b'); b.textContent = ' ' + r.evento;
+      top.append(c, b);
+      const m1 = document.createElement('div'); m1.className = 'ev-meta'; m1.textContent = r.hora + (alt ? ' · fecha alternativa' : '');
+      const m2 = document.createElement('div'); m2.textContent = r[s.impact] || '';
+      it.append(top, m1, m2);
+      if (r.cortes) { const m3 = document.createElement('div'); m3.className = 'ev-meta'; m3.textContent = r.cortes; it.appendChild(m3); }
+      box.appendChild(it);
+    });
+  }
+
+  function drawCalendar(s, win, today, status) {
+    const cal = $(s.p + '-cal');
+    document.querySelectorAll('#' + s.key + ' .ev-switch button[data-dias]').forEach((b) => b.setAttribute('aria-pressed', String(Number(b.dataset.dias) === dias)));
+    if (status === 'error') { fail(cal); $(s.p + '-detalle').replaceChildren(); return; }
+    cal.replaceChildren();
+    if (status !== 'ok') { $(s.p + '-detalle').replaceChildren(); return; }
+    const last = addDays(today, dias);
+    const start = addDays(today, -dowMon(today));
+    const end = addDays(last, 6 - dowMon(last));
+    const byDay = new Map();
+    const push = (d, r, alt) => { if (d && d >= today && d <= last) { if (!byDay.has(d)) byDay.set(d, []); byDay.get(d).push({ r, alt }); } };
+    win.forEach((r) => { push(r.fecha, r, false); if (r.fecha_alt) push(r.fecha_alt, r, true); });
+    ['L', 'M', 'M', 'J', 'V', 'S', 'D'].forEach((t) => { const h = document.createElement('div'); h.className = 'ev-dow'; h.textContent = t; cal.appendChild(h); });
+    let sel = selected[s.key];
+    if (!sel || !byDay.has(sel) || sel < today) {
+      sel = byDay.has(today) ? today : ([...byDay.keys()].sort()[0] || today);
+      selected[s.key] = sel;
+    }
+    let first = true;
+    for (let d = start; d <= end; d = addDays(d, 1)) {
+      const evs = byDay.get(d) || [];
+      const lv = evs.reduce((m, e) => Math.max(m, Number(e.r.nivel) || 0), 0);
+      const el = document.createElement(evs.length ? 'button' : 'div');
+      el.className = 'ev-day';
+      if (d > last) el.classList.add('is-out');
+      if (d < today) el.classList.add('is-past');
+      if (d === today) el.classList.add('is-today');
+      const dt = new Date(d + 'T12:00:00Z');
+      const num = document.createElement('span'); num.textContent = String(dt.getUTCDate());
+      el.appendChild(num);
+      if (first || dt.getUTCDate() === 1) { const m = document.createElement('span'); m.className = 'ev-m'; m.textContent = MES[dt.getUTCMonth()]; el.appendChild(m); }
+      first = false;
+      if (evs.length) {
+        el.type = 'button';
+        el.classList.add('has-ev');
+        el.style.background = fill(lv);
+        if (lv >= 3) el.classList.add('is-strong');
+        el.setAttribute('aria-label', label(d) + ': ' + evs.map((e) => e.r.evento + ' (' + e.r.probabilidad + ')').join(', '));
+        if (d === sel) el.classList.add('is-sel');
+        el.addEventListener('click', () => { selected[s.key] = d; drawSheet(s); });
+      }
+      cal.appendChild(el);
+    }
+    drawDetail(s, byDay, sel);
+  }
+
+  function drawLegend(s) {
+    const lg = $(s.p + '-leyenda');
+    lg.replaceChildren();
+    NIV.forEach(({ n, t }) => {
+      const sp = document.createElement('span'); const i = document.createElement('i');
+      i.style.background = fill(n); sp.append(i, document.createTextNode(t)); lg.appendChild(sp);
+    });
+  }
+
+  function drawTable(s, win, status) {
+    const tb = $(s.p + '-tabla');
+    tb.replaceChildren();
+    if (status === 'error') {
+      const tr = document.createElement('tr'); const td = document.createElement('td'); td.colSpan = 9;
+      fail(td); tr.appendChild(td); tb.appendChild(tr); return;
+    }
+    if (status !== 'ok') return;
+    const fields = ['fecha_texto', 'evento', 'tipo', 'probabilidad', s.impact, 'hora', 'cortes', 'nota', 'fuente_nombre'];
+    win.forEach((r) => {
+      const tr = document.createElement('tr');
+      tr.className = 'lv-' + r.nivel;
+      fields.forEach((f) => {
+        const td = document.createElement('td');
+        if (f === 'probabilidad') {
+          const sp = document.createElement('span'); sp.textContent = r[f] || ''; chip(sp, r.nivel); td.appendChild(sp);
+        } else if (f === 'fuente_nombre' && safeUrl(r.fuente)) {
+          const a = document.createElement('a'); a.href = safeUrl(r.fuente); a.target = '_blank'; a.rel = 'noopener noreferrer';
+          a.textContent = r[f] || 'Fuente'; td.appendChild(a);
+        } else {
+          td.textContent = r[f] == null ? '' : String(r[f]);
+        }
+        tr.appendChild(td);
+      });
+      tb.appendChild(tr);
+    });
+  }
+
+  function drawSheet(s) {
+    const today = todayIso();
+    const last = addDays(today, 60);
+    const e = store[s.ds];
+    const rows = e.status === 'ok' ? e.data.map((r) => ({ ...r, nivel: Number(r.nivel) || 0 })) : [];
+    const win = rows
+      .filter((r) => typeof r.fecha === 'string' && (r.fecha >= today || (r.fecha_alt && r.fecha_alt >= today)) && r.fecha <= last)
+      .sort((a, b) => (a.fecha < b.fecha ? -1 : a.fecha > b.fecha ? 1 : b.nivel - a.nivel));
+    drawRevision(s);
+    drawTiles(s, win, today, e.status);
+    drawLegend(s);
+    drawCalendar(s, win, today, e.status);
+    drawTable(s, win, e.status);
+  }
+
+  function drawAll() { SHEETS.forEach(drawSheet); }
+
+  async function load(id) {
+    try {
+      const r = await fetch('data/' + id + '.json', { cache: 'no-cache' });
+      if (!r.ok) throw new Error(String(r.status));
+      const d = await r.json();
+      store[id] = { status: 'ok', data: Array.isArray(d) ? d : [] };
+    } catch (err) {
+      store[id] = { status: 'error', data: [] };
+    }
+    drawAll();
+  }
+
+  drawAll();
+  Object.keys(store).forEach(load);
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "21345c992f474a888e623f001f0b4cf0"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
