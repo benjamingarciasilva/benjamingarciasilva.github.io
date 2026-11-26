@@ -8,12 +8,12 @@
     "tipo": "Marcha",
     "probabilidad": "Probable",
     "nivel": 2,
-    "impacto": "Posibles cortes acotados de la Alameda en torno a la sede de la ANEF y el Ministerio de Hacienda a media mañana",
-    "hora": "11:00",
-    "cortes": "Concentración a las 11:00 en la sede de la ANEF (Edificio Tucapel Jiménez, Alameda 1603, cerca de Metro Los Héroes) y marcha hacia el Ministerio de Hacienda (Teatinos 120). Recorrido, autorización y desvíos no publicados.",
-    "nota": "Convocan la ANEF y la Mesa del Sector Público contra despidos y por respuestas a su pliego; también acciones en reparticiones públicas de todo el país. Radio Agricultura (25 nov) anticipa posibles cambios en la circulación en la Alameda y el Barrio Cívico durante la mañana.",
-    "fuente_nombre": "ANEF (25 nov)",
-    "fuente": "https://anef.cl/anef-y-msp-convoca-a-una-jornada-nacional-de-movilizacion-este-jueves-26-de-noviembre-contra-los-despidos-y-las-dilaciones-del-gobierno/"
+    "impacto": "Posibles cortes acotados de la Alameda entre Los Héroes y el Barrio Cívico a media mañana",
+    "hora": "11:00 (ANEF); 11:30 (Asemuch)",
+    "cortes": "Concentraciones en la sede de la ANEF (Alameda 1603, cerca de Metro Los Héroes) a las 11:00 y en la sede de la CUT (Alameda 1346, cerca de Metro La Moneda) a las 11:30; luego marcha hacia el Ministerio de Hacienda (Teatinos 120). Autorización, recorrido detallado y desvíos no publicados oficialmente.",
+    "nota": "Convocan la ANEF y la Mesa del Sector Público contra despidos y por respuestas a su pliego; se suma la Asemuch (funcionarios municipales). También acciones en reparticiones públicas de todo el país. Radio Agricultura (25 nov) anticipa posibles cambios en la circulación en la Alameda y el Barrio Cívico durante la mañana.",
+    "fuente_nombre": "Radio Agricultura (25 nov)",
+    "fuente": "https://www.radioagricultura.cl/noticias/nacional/movilizacion-funcionarios-publicos-jueves-26-noviembre_20261125/"
   },
   {
     "id": "pobladores-minvu-2026-11-27",
@@ -62,6 +62,22 @@
     "nota": "Recorrido 2026: unos 3 km desde Av. Salvador por el eje Providencia-Alameda hasta La Moneda, desde las 11:00. Plan oficial de cortes aún no publicado (revisado 26 nov).",
     "fuente_nombre": "El Mostrador (25 nov)",
     "fuente": "https://www.elmostrador.cl/revista-jengibre/panoramas/2026/11/25/paris-parade-llega-a-su-15a-edicion-con-desfile-gratuito-entre-avenida-salvador-y-la-moneda"
+  },
+  {
+    "id": "corrida-gana-santiago-2026-12-06",
+    "fecha": "2026-12-06",
+    "fecha_alt": null,
+    "fecha_texto": "dom 6 dic",
+    "evento": "IV Corrida Gana Santiago (5, 10 y 21 km)",
+    "tipo": "Evento masivo",
+    "probabilidad": "Muy probable",
+    "nivel": 3,
+    "impacto": "Cierres en la Alameda y calles del Barrio Cívico durante la mañana del domingo; desvíos de buses",
+    "hora": "Largada desde las 08:30",
+    "cortes": "Plan 2026 no publicado. Precedente 2025 (dom 2 nov): Alameda calzada sur cerrada entre Paseo Bulnes y Ramón Corvalán, con circuitos por Paseo Bulnes, Nataniel Cox, Ramón Corvalán y Ejército.",
+    "nota": "Corrida gratuita del Gobierno de Santiago con Caja Los Andes, con 20 mil cupos; largada frente a La Moneda (Plaza Bulnes) y base en la Plaza de la Ciudadanía. Inscripciones abiertas desde el 19 nov.",
+    "fuente_nombre": "Código Runner",
+    "fuente": "https://codigorunner.cl/iv-corrida-gana-santiago-2026-guia-de-la-corrida-gratuita-mas-grande-de-la-region-metropolitana/"
   },
   {
     "id": "ano-nuevo-torre-entel-2026-12-31",
