@@ -8,28 +8,28 @@
   "tipo": "Fútbol",
   "probabilidad": "Baja",
   "nivel": 1,
-  "grecia": "Efecto probablemente nulo: el Nacional no figura entre las sedes en evaluación",
+  "grecia": "Sin efecto esperado: el partido se proyecta en el Estadio Fiscal de Talca",
   "hora": "18:00",
   "cortes": "Precedente en partidos: Grecia aislada entre Pedro de Valdivia y Av. Salvador.",
-  "nota": "La ANFP lo fijó el 24 nov para el dom 6 dic a las 18:00, en simultáneo con los otros grandes, aún sin recinto confirmado. Según La Magia Azul (24 nov), Santa Laura y El Teniente tienen compromisos ese fin de semana y Viña, Valparaíso, Concepción y Coquimbo se negaron; el Estadio Fiscal de Talca toma fuerza y se decidiría hoy 25 nov. El Nacional no se considera por el daño del césped tras BTS.",
-  "fuente_nombre": "Al Aire Libre (24 nov)",
-  "fuente": "https://www.alairelibre.cl/futbol/campeonato-nacional/fecha-30-liga-de-primera-programacion-tres-grandes-simultaneo/"
+  "nota": "Fijado por la ANFP para el dom 6 dic a las 18:00. La Magia Azul y RedGol (25 nov) informan que se jugará en el Estadio Fiscal de Talca, aún sin confirmación oficial; el Nacional no se contempla por el estado de la cancha y la U no volvería a él hasta 2027.",
+  "fuente_nombre": "La Magia Azul (25 nov)",
+  "fuente": "https://www.lamagiaazul.cl/ultimas-noticias/en-este-estadio-jugara-la-u-ante-union-la-calera-por-la-ultima-fecha-de-la-liga-de-primera/"
  },
  {
-  "id": "udch-copachile-semi-vuelta-2026-12-09",
-  "fecha": "2026-12-09",
+  "id": "udch-copachile-semi-vuelta-2026-12-10",
+  "fecha": "2026-12-10",
   "fecha_alt": null,
-  "fecha_texto": "mié 9 dic (por confirmar)",
+  "fecha_texto": "jue 10 dic (por confirmar)",
   "evento": "U. de Chile vs Coquimbo Unido (semifinal Copa Chile)",
   "tipo": "Fútbol",
   "probabilidad": "Baja",
   "nivel": 1,
-  "grecia": "Efecto probablemente nulo: el Nacional está en resiembra y no se proyecta como sede",
+  "grecia": "Sin efecto esperado: la vuelta se proyecta en El Teniente de Rancagua",
   "hora": "Por confirmar",
   "cortes": "Precedente en partidos: Grecia aislada entre Pedro de Valdivia y Av. Salvador.",
-  "nota": "Coquimbo eliminó a La Calera el 24 nov (1-1, 3-1 global) y será el rival de la U. La ANFP aún no programa fechas ni estadios de las semifinales; Prensafutbol (18 nov) situaba la de la U el 9 dic. La cancha del Nacional está en un proceso de siembra de unos 30 días y la despedida de Marcelo Díaz se movió a 2027 por ese motivo.",
-  "fuente_nombre": "BioBioChile (24 nov)",
-  "fuente": "https://www.biobiochile.cl/noticias/deportes/futbol/futbol-nacional/2026/11/24/coquimbo-avanzo-a-semifinales-de-copa-chile-tras-igualar-con-la-calera-piratas-chocaran-contra-la-u.shtml"
+  "nota": "Según RedGol (25 nov), la ida sería el 3 dic en Coquimbo y la vuelta el 10 dic en El Teniente (Rancagua); para una eventual final el 13 dic se evalúa el Ester Roa de Concepción y el Nacional no es opción. La ANFP aún no publica la programación oficial.",
+  "fuente_nombre": "RedGol (25 nov)",
+  "fuente": "https://redgol.cl/udechile/u-de-chile-se-despide-del-estadio-nacional-hasta-la-temporada-2027"
  },
  {
   "id": "macha-bloque-depresivo-2026-12-11",
@@ -43,7 +43,7 @@
   "grecia": "Congestión en Grecia por cierres en torno al estadio en día hábil; plan aún no publicado",
   "hora": "20:00",
   "cortes": "Precedente BTS (14-17 oct 2026): cierres progresivos desde las 07:00 en Pedro de Valdivia (ambos sentidos) y Marathon (calzada oriente) entre Av. Grecia y Guillermo Mann; Carlos Dittborn reservada para buses.",
-  "nota": "Anunciado el 2 sep para el Estadio Nacional; agotado, por lo que se sumó una segunda fecha el sáb 12 dic. Punto Ticket lo mantiene sin aviso de cambio (revisado 25 nov); descarga de e-tickets desde el 4 dic.",
+  "nota": "Anunciado el 2 sep para el Estadio Nacional; agotado, por lo que se sumó una segunda fecha el sáb 12 dic. Punto Ticket lo mantiene sin aviso de cambio (revisado 26 nov); descarga de e-tickets desde el 4 dic.",
   "fuente_nombre": "Punto Ticket",
   "fuente": "https://www.puntoticket.com/macha-y-el-bloque-depresivo"
  },
@@ -59,7 +59,7 @@
   "grecia": "Congestión en Grecia por cierres en torno al estadio; plan aún no publicado",
   "hora": "20:00",
   "cortes": "Precedente BTS (14-17 oct 2026): cierres progresivos desde las 07:00 en Pedro de Valdivia (ambos sentidos) y Marathon (calzada oriente) entre Av. Grecia y Guillermo Mann; Carlos Dittborn reservada para buses.",
-  "nota": "Segunda fecha anunciada el 3 sep tras agotarse la del 11 dic; Punto Ticket la lista a las 20:00 en el Estadio Nacional, sin aviso de cambio (revisado 25 nov).",
+  "nota": "Segunda fecha anunciada el 3 sep tras agotarse la del 11 dic; Punto Ticket la lista a las 20:00 en el Estadio Nacional, sin aviso de cambio (revisado 26 nov).",
   "fuente_nombre": "Punto Ticket",
   "fuente": "https://www.puntoticket.com/macha-y-el-bloque-depresivo?dates=2026-12-12"
  },
@@ -74,7 +74,7 @@
   "nivel": 2,
   "grecia": "Recorrido no publicado; posible efecto acotado en el entorno del parque en la mañana",
   "hora": "Largada desde 08:30; festival de cierre desde ~11:00",
-  "cortes": "Recorrido y plan de cortes aún no publicados (revisado 25 nov).",
+  "cortes": "Recorrido y plan de cortes aún no publicados (revisado 26 nov).",
   "nota": "Corrida de 3, 5 y 10 km con 6 mil cupos; salida y meta en la pista atlética Mario Recordón del Parque Estadio Nacional. Festival de cierre con Francisca Valenzuela; retiro de kits vie 11 y sáb 12 dic (10:00-20:00) en el parque.",
   "fuente_nombre": "G5 Noticias",
   "fuente": "https://g5noticias.cl/2026/11/05/francisca-valenzuela-encabezara-el-festival-de-cierre-de-smart-fit-run-2026/"
