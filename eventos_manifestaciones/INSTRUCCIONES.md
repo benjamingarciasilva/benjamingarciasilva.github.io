@@ -66,7 +66,7 @@ Sube cada archivo nuevo como asset del dashboard con la herramienta Artifact (ac
 - source = {"kind": "file", "url": <url /_blob/... devuelta>, "name": <nombre del archivo>, "format": "json"}
 - updated = {"at": hora actual ISO UTC, "by": "Claude (tarea diaria)"}
 
-Después borra los assets anteriores de esos documentos (Artifact action "delete", url del dashboard, path = id del asset anterior), solo si el batch se aplicó. No abras, renderices ni navegues el dashboard. Si ya subiste archivos pero el batch falló, relee las versiones y reintenta el batch una vez. Si la investigación de una hoja falla por completo, deja esa hoja como estaba.
+Después borra los assets anteriores de esos documentos (Artifact action "delete", url del dashboard, path = id del asset anterior), solo si el batch se aplicó. Si un borrado es rechazado o bloqueado, no lo reintentes ni busques otra forma: deja ese asset y sigue con el paso 6 (un asset antiguo sin borrar no afecta al dashboard). No abras, renderices ni navegues el dashboard. Si ya subiste archivos pero el batch falló, relee las versiones y reintenta el batch una vez. Si la investigación de una hoja falla por completo, deja esa hoja como estaba.
 
 ## 6. Publicar en el sitio web
 
