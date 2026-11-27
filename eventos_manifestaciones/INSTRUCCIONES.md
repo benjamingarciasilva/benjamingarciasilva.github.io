@@ -52,7 +52,15 @@ Santiago Centro:
 
 - El campo de impacto se llama `impacto` (efecto en tránsito y transporte público en una frase corta).
 - tipo: "Marcha", "Protesta", "Paro", "Evento masivo", "Cultural", "Acto oficial" (incluye visitas protocolares y actividades con cortes en torno a La Moneda), "Obras".
-- Probabilidad de cortes, desvíos o cierres de Metro en el centro: "Confirmado" = 4 (cortes, desvíos o cierres de Metro anunciados oficialmente para ese día, o marcha autorizada con recorrido publicado); "Muy probable" = 3 (marcha grande convocada por la Alameda u otro eje principal, o evento masivo confirmado, sin plan oficial aún); "Probable" = 2 (convocatoria más acotada o en un punto fijo, evento masivo aún no confirmado, o actividad oficial confirmada en La Moneda con cortes de seguridad esperables pero no anunciados); "Baja" = 1 (sin fecha, recorrido o programación que afecte el tránsito).
+- Probabilidad de cortes, desvíos o cierres de Metro en el centro: "Confirmado" = 4 (cortes, desvíos o cierres de Metro anunciados oficialmente para ese día, o marcha autorizada con recorrido publicado); "Muy probable" = 3 (marcha grande convocada por la Alameda u otro eje principal, o evento masivo confirmado, sin plan oficial aún); "Probable" = 2 (convocatoria más acotada o en un punto fijo, evento masivo aún no confirmado, o actividad oficial confirmada en La Moneda con cortes de seguridad esperables pero no anunciados, salvo que un precedente justifique subirla: ver "Precedentes"); "Baja" = 1 (sin fecha, recorrido o programación que afecte el tránsito).
+
+Precedentes (ambas hojas). Si el evento ya ocurrió antes (ediciones anteriores del mismo evento o carrera, el mismo artista o tipo de partido en el Nacional, una marcha que se repite cada año, el mismo tipo de visita o ceremonia en La Moneda), busca qué pasó esas veces y úsalo para fijar la probabilidad:
+
+- Si en ocasiones comparables recientes (idealmente de los últimos 1 a 3 años) hubo cortes, desvíos o cierres de Metro documentados en la zona, y el evento de este año está confirmado, asígnale "Muy probable" (3) aunque aún no se publique el plan de este año.
+- Si los precedentes muestran que no hubo cortes relevantes, usa "Probable" (2) o "Baja" (1) según corresponda.
+- Si el evento de este año no está confirmado, el precedente no lo sube de "Probable" (2).
+- "Confirmado" (4) sigue reservado para cortes anunciados oficialmente para la fecha de este año.
+- Anota el precedente en `cortes` con fecha y calles (p.ej. "Precedente 2025 (dom 2 nov): Alameda calzada sur cerrada entre Paseo Bulnes y Ramón Corvalán") y di en `nota` que el nivel se basa en ese precedente. Si no encuentras un precedente documentado, usa las reglas generales de arriba.
 
 Una convocatoria sin fecha concreta no entra en la lista: menciónala en el resumen.
 
