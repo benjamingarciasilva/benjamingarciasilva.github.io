@@ -14,7 +14,7 @@ Trabaja sin preguntar nada: nadie está mirando esta ejecución. Fecha y hora de
 La tarea corre dos veces al día. Mira la hora local de inicio:
 
 - Antes de las 12:00: corrida de la mañana. Actualiza las dos hojas.
-- Desde las 12:00: corrida de la tarde. Actualiza solo "Santiago Centro" (con foco en convocatorias, autorizaciones, cortes y cierres de Metro de hoy y mañana) y deja "Estadio Nacional" tal como está: no investigues esa hoja ni subas o actualices sus archivos.
+- Desde las 12:00: corrida de la tarde. Actualiza solo "Santiago Centro" (con foco en convocatorias, autorizaciones, cortes, cierres de Metro y actividades en La Moneda de hoy y mañana) y deja "Estadio Nacional" tal como está: no investigues esa hoja ni subas o actualices sus archivos.
 
 ## 1. Leer
 
@@ -29,11 +29,12 @@ Hoja Estadio Nacional (Estadio Nacional y Parque Estadio Nacional, Ñuñoa; efec
 - Cada evento de la lista: ¿sigue en pie, en el Nacional, en esa fecha y hora? ¿Se publicó el plan de cortes (Municipalidad de Ñuñoa, Delegación Presidencial RM, Transporte Informa/UOCT, Carabineros, prensa)? Registra calles, tramos y horarios, sobre todo cortes en Av. Grecia.
 - Eventos nuevos: conciertos, partidos de Universidad de Chile como local (Liga de Primera, Copa Chile, copas internacionales; revisa la programación oficial de la ANFP en campeonatochileno.cl), partidos de la Selección, Teletón, carreras con partida o meta en el parque, actos o marchas con cortes en Grecia, festivales.
 
-Hoja Santiago Centro (comuna de Santiago, sobre todo la Alameda entre Plaza Baquedano y Estación Central, Barrio Cívico, Santa Lucía, Los Héroes y Parque O'Higgins; y las líneas 1, 2, 3 y 5 de Metro en el centro):
+Hoja Santiago Centro (comuna de Santiago, sobre todo la Alameda entre Plaza Baquedano y Estación Central, el Barrio Cívico y el entorno de La Moneda, Santa Lucía, Los Héroes y Parque O'Higgins; y las líneas 1, 2, 3 y 5 de Metro en el centro):
 
 - Cada evento de la lista: ¿se mantiene la convocatoria, fecha, hora y recorrido? ¿La Delegación Presidencial la autorizó? ¿Se publicaron cortes, desvíos (Transporte Informa, UOCT, Red Movilidad, Carabineros) o cierres de estaciones de Metro?
-- Eventos nuevos: marchas y protestas convocadas (CUT, Confech, Colegio de Profesores, ANEF, secundarios, feministas, pobladores, No+AFP, trabajadores de la salud, hinchas, etc.), paros de transporte (buses, taxis, camioneros) que afecten el centro, eventos masivos (Paris Parade, Año Nuevo en la Torre Entel, Teatro a Mil en la calle, Día del Patrimonio, fiestas o conciertos grandes en Parque O'Higgins o el Club Hípico), actos oficiales con cortes (visitas de Estado, ceremonias en La Moneda), obras con cortes programados en ejes del centro y cierres programados de estaciones de Metro. Buenas fuentes: BioBioChile, Emol, La Tercera, Chilevisión, Meganoticias, 24horas, T13, Radio Agricultura, El Desconcierto, Radio U. de Chile, cuentas de Metro de Santiago y Transporte Informa citadas en prensa.
-- Las marchas suelen anunciarse con pocos días de anticipación: busca específicamente convocatorias para hoy y los próximos 7 días.
+- Eventos nuevos: marchas y protestas convocadas (CUT, Confech, Colegio de Profesores, ANEF, secundarios, feministas, pobladores, No+AFP, trabajadores de la salud, hinchas, etc.), paros de transporte (buses, taxis, camioneros) que afecten el centro, eventos masivos (Paris Parade, Año Nuevo en la Torre Entel, Teatro a Mil en la calle, Día del Patrimonio, fiestas o conciertos grandes en Parque O'Higgins o el Club Hípico), actos oficiales con cortes (ver el punto siguiente), obras con cortes programados en ejes del centro y cierres programados de estaciones de Metro. Buenas fuentes: BioBioChile, Emol, La Tercera, Chilevisión, Meganoticias, 24horas, T13, Radio Agricultura, El Desconcierto, Radio U. de Chile, cuentas de Metro de Santiago y Transporte Informa citadas en prensa.
+- Entorno de La Moneda: busca específicamente actividades en La Moneda y el Barrio Cívico que impliquen cortes o restricciones de tránsito por seguridad en Agustinas, Moneda, Teatinos, Morandé, Plaza de la Constitución o Plaza de la Ciudadanía, aunque no se cierre la Alameda. Por ejemplo: visitas de Estado, oficiales o protocolares de jefes de Estado o de Gobierno (con ceremonia de recepción en La Moneda); ceremonias y actos oficiales con el Presidente, ministros u otras altas autoridades (firmas, promulgaciones, juramentos o cambios de gabinete, conmemoraciones); reuniones o cumbres internacionales en Santiago; y cualquier perímetro de seguridad anunciado. Fuentes: agenda y prensa de la Presidencia (prensa.presidencia.cl, gob.cl), Cancillería (minrel.gob.cl) para visitas oficiales, Delegación Presidencial RM, Carabineros, Transporte Informa/UOCT y prensa. En la fila, nombra en `cortes` las calles cerradas o, si no se publicaron, el precedente más cercano.
+- Las marchas y las actividades en La Moneda suelen anunciarse con pocos días de anticipación: busca específicamente convocatorias y actividades para hoy y los próximos 7 días.
 
 ## 3. Construir
 
@@ -50,8 +51,8 @@ Estadio Nacional:
 Santiago Centro:
 
 - El campo de impacto se llama `impacto` (efecto en tránsito y transporte público en una frase corta).
-- tipo: "Marcha", "Protesta", "Paro", "Evento masivo", "Cultural", "Acto oficial", "Obras".
-- Probabilidad de cortes, desvíos o cierres de Metro en el centro: "Confirmado" = 4 (cortes, desvíos o cierres de Metro anunciados oficialmente para ese día, o marcha autorizada con recorrido publicado); "Muy probable" = 3 (marcha grande convocada por la Alameda u otro eje principal, o evento masivo confirmado, sin plan oficial aún); "Probable" = 2 (convocatoria más acotada o en un punto fijo, o evento masivo aún no confirmado); "Baja" = 1 (sin fecha, recorrido o programación que afecte el tránsito).
+- tipo: "Marcha", "Protesta", "Paro", "Evento masivo", "Cultural", "Acto oficial" (incluye visitas protocolares y actividades con cortes en torno a La Moneda), "Obras".
+- Probabilidad de cortes, desvíos o cierres de Metro en el centro: "Confirmado" = 4 (cortes, desvíos o cierres de Metro anunciados oficialmente para ese día, o marcha autorizada con recorrido publicado); "Muy probable" = 3 (marcha grande convocada por la Alameda u otro eje principal, o evento masivo confirmado, sin plan oficial aún); "Probable" = 2 (convocatoria más acotada o en un punto fijo, evento masivo aún no confirmado, o actividad oficial confirmada en La Moneda con cortes de seguridad esperables pero no anunciados); "Baja" = 1 (sin fecha, recorrido o programación que afecte el tránsito).
 
 Una convocatoria sin fecha concreta no entra en la lista: menciónala en el resumen.
 
