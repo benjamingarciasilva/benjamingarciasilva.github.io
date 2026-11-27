@@ -11,7 +11,7 @@
     "impacto": "Posible corte de la calzada sur de la Alameda frente al ministerio, en horario hábil",
     "hora": "11:00",
     "cortes": "Punto fijo: Alameda entre Serrano y Arturo Prat. Plan de desvíos no publicado. Precedente: en marzo de 2026 una protesta de pobladores cortó la Alameda completa.",
-    "nota": "Convoca el Movimiento Nacional de Pobladoras y Pobladores, dentro del calendario del Frente Común (CUT, Confech y pobladores): concentración y \"copamiento\" del Minvu a las 11:00 por el recorte de cupos del subsidio DS49 y para exigir la renuncia del ministro Poduje; la Confech anunció que se suma. Sin autorización ni desvíos publicados (revisado 27 nov).",
+    "nota": "Convoca el Movimiento Nacional de Pobladoras y Pobladores, dentro del calendario del Frente Común (CUT, Confech y pobladores): concentración y \"copamiento\" del Minvu a las 11:00 por el recorte de cupos del subsidio DS49 y para exigir la renuncia del ministro Poduje; la Confech anunció que se suma. Sin autorización ni desvíos publicados, y sin reportes en prensa del desarrollo de la protesta (revisado 27 nov, 14:50).",
     "fuente_nombre": "El Clarín (26 nov)",
     "fuente": "https://www.elclarin.cl/2026/11/26/la-vivienda-imposible-precios-disparados-recortes-y-pobladores-movilizados-contra-poduje/"
   },
@@ -22,14 +22,14 @@
     "fecha_texto": "sáb 28 nov",
     "evento": "Marcha No+AFP",
     "tipo": "Marcha",
-    "probabilidad": "Probable",
-    "nivel": 2,
-    "impacto": "Desvíos en torno a Plaza Italia y la Alameda en la mañana del sábado",
+    "probabilidad": "Muy probable",
+    "nivel": 3,
+    "impacto": "Cortes y desvíos en la Alameda entre Plaza Italia y Santa Rosa durante la mañana del sábado",
     "hora": "11:00",
-    "cortes": "Punto de partida: Plaza Italia. Recorrido y plan de desvíos no publicados.",
-    "nota": "Convoca la Coordinadora Nacional de Trabajadores No+AFP, que en declaración pública llama a una gran marcha el sáb 28 nov a las 11:00; adhieren el Colegio de Profesores, la Coordinadora 8M, la ANEF, la Confederación Bancaria y la Confech, entre otros. Autorización y recorrido aún no publicados (revisado 27 nov).",
-    "fuente_nombre": "BioBioChile (22 nov)",
-    "fuente": "https://www.biobiochile.cl/noticias/nacional/region-metropolitana/2026/11/22/organizaciones-preparan-seguidilla-de-marchas-contra-el-gobierno-de-kast-comenzaran-este-martes.shtml"
+    "cortes": "Recorrido anunciado: Plaza Italia por la Alameda hasta Santa Rosa (Colegio de Profesores); otra versión de la convocatoria termina en Plaza Los Héroes con un acto. Plan de desvíos no publicado. Contexto: las marchas por la Alameda del 18, 24 y 25 nov tuvieron cortes en la Alameda y, el 24 nov, cierre de accesos de Metro Los Héroes (L1 y L2).",
+    "nota": "\"Marcha familiar\" de la Coordinadora Nacional No+AFP, con adhesión del Colegio de Profesores, la Coordinadora 8M, la ANEF, la Confederación Bancaria y la Confech. Se sube a \"Muy probable\" por ser una marcha grande convocada por la Alameda con recorrido anunciado; aún sin autorización de la Delegación ni desvíos oficiales publicados (revisado 27 nov, 14:50).",
+    "fuente_nombre": "Colegio de Profesores (27 nov)",
+    "fuente": "https://www.colegiodeprofesores.cl/2026/11/27/marcha-familiar-noafp-este-sabado-28-de-noviembre/"
   },
   {
     "id": "paris-parade-2026-11-29",
@@ -43,7 +43,7 @@
     "impacto": "Eje Alameda-Providencia cerrado entre Salvador y La Moneda durante la mañana; desvíos de buses",
     "hora": "Desfile desde las 11:00; cortes desde la noche del sábado (precedente)",
     "cortes": "Plan 2026 no publicado. Precedente 2025: cierre parcial del eje Alameda-Providencia desde la medianoche y total entre Manuel Montt y Av. España desde las 09:00, con reapertura hacia las 15:30; Lord Cochrane cerrada hasta las 18:00.",
-    "nota": "Recorrido 2026: unos 3 km desde Av. Salvador por el eje Providencia-Alameda hasta La Moneda, desde las 11:00. Plan oficial de cortes y desvíos de Red aún no publicado (revisado 27 nov).",
+    "nota": "Recorrido 2026: unos 3 km desde Av. Salvador por el eje Providencia-Alameda hasta La Moneda, desde las 11:00. Plan oficial de cortes y desvíos de Red aún no publicado (revisado 27 nov, 14:50).",
     "fuente_nombre": "El Mostrador (25 nov)",
     "fuente": "https://www.elmostrador.cl/revista-jengibre/panoramas/2026/11/25/paris-parade-llega-a-su-15a-edicion-con-desfile-gratuito-entre-avenida-salvador-y-la-moneda"
   },
